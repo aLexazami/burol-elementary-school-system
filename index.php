@@ -7,6 +7,7 @@
   <title>Burol Elementary School</title>
 </head>
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+  <!-- Header Section -->
   <header class=" bg-white shadow-md sticky-top-0 z-10">
     <section class="max-w-4xl mx-auto flex justify-between items-center">
         <div class="flex items-center ">
@@ -17,14 +18,15 @@
         </div>
       <nav>
         <ul class="flex space-x-4 mr-3">
-          <li><a href="#signin" class="text-emerald-800 text-md hover:text-emerald-600">Sign in</a></li>
-          <li><a href="#" class="text-emerald-800 text-md hover:text-emerald-600">About Us</a></li>
-          <li><a href="#" class="text-emerald-800 text-md hover:text-emerald-600">Feedback</a></li>
-          <li><a href="#" class="text-emerald-800 text-md hover:text-emerald-600">FAQs</a></li>
+          <li><a href="#signin" class="text-emerald-800 text-md hover:text-emerald-600 pr-10">Sign in</a></li>
+          <li><a href="/pages/feedback-form.php" class="text-emerald-800 text-md hover:text-emerald-600">Feedback</a></li>
+          <li><a href="/pages/faqs.php" class="text-emerald-800 text-md hover:text-emerald-600">FAQs</a></li>
           </ul>
       </nav>
     </section>
   </header>
+
+  <!-- Main Content Section -->
   <main class="max-w-4xl mx-auto px-4 pt-10 ">
     <section id="signin"class="flex flex-col h-auto py-10 ">
       <form action="">
@@ -55,6 +57,8 @@
       </form>
     </section>
   </main>
+
+  <!--Footer Section-->
   <footer class="bg-emerald-950 absolute bottom-0 w-full">
     <section class="text-center py-3">
       <p class="text-white text-sm">
