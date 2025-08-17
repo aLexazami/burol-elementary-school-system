@@ -31,92 +31,91 @@
   <!-- Main Content Section -->
   <!-- Feedback Form Section -->
   <main class="max-w-4xl mx-auto px-4 pt-10">
-    <section class="p-5">
-      <form action="">
-        <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
-        <br>
-        <br>
-        <p class="text-lg text-white font-medium bg-emerald-700 w-fit p-2">Client Information</p>
-        <br>
-        <div class="flex flex-col">
-          <label class="font-medium pb-2"><i>Pangalan</i></label>
-          <input type="text" id="name" name="name" placeholder="Name (Optional)" class="border-2 rounded-lg p-2">
-          <br>
-          <label class="font-medium pb-2"><i>Petsa</i></label>
-          <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" placeholder="Date" class="border-2 rounded-lg p-2">
-          <br>
-          <label class="font-medium pb-2"><i>Edad</i></label>
-          <select id="age" name="age" class="border-2 rounded-lg p-2">
-            <option value="" disabled selected>Age</option>
-            <option value="under-19">19 or lower / 19 pababa</option>
-            <option value="20-34">20 - 34</option>
-            <option value="35-49">35 - 49</option>
-            <option value="50-64">50 - 64</option>
-            <option value="65-up">65 and higher / 65 pataas</option>
-          </select>
-          <br>
-          <label class="font-medium pb-2"><i>Kasarian</i></label>
-          <select id="sex" name="sex" class="border-2 rounded-lg p-2">
-            <option value="" disabled selected>Sex</option>
-            <option value="Female">Female / Babae</option>
-            <option value="Male">Male / Lalaki</option>
-          </select>
-          <br>
-          <label class="font-medium pb-2"><i>Uri ng Kliyente</i></label>
-          <select id="customer-type" name="customer-type" onchange="updateServiceOptions()" class="border-2 rounded-lg p-2">
-            <option value="" disabled selected>Customer Type</option>
-            <option value="business">Business</option>
-            <option value="citizen">Citizen</option>
-            <option value="government">Government</option>
-          </select>
-          <p class="pt-2"><b>Notes:</b> <br>
-            <b>Business</b> (private school, corporations, etc.)<br>
-            <b>Citizen</b> (general public, learners, parents, former DepEd employees, researchers, NGOs etc)<br>
-            <b>Government</b> (current DepEd employees or employees of other government agencies & LGU)
-          </p>
-          </p>
-          <br>
-          <label class="font-medium pb-2"><i>Serbisyong Natanggap</i></label>
-          <select id="service-availed" name="service-availed" class="border-2 rounded-lg p-2">
-            <option value="" disabled selected>Service Availed</option>
-          </select>
-          <br>
-          <label class="font-medium pb-2"><i>Rehiyon</i></label>
-          <select id="region" name="region" class="border-2 rounded-lg p-2">
-            <option value="" disabled selected>Region</option>
-            <option value="RegionI - Ilocos Region">Region I - Ilocos Region</option>
-            <option value="Region II - Cagayan Valley">Region II - Cagayan Valley</option>
-            <option value="Region III - Central Luzon">Region III - Central Luzon</option>
-            <option value="Region IV-A - Calabarzon">Region IV-A - Calabarzon</option>
-            <option value="MIMAROPA - Southwestern Tagalog">MIMAROPA - Southwestern Tagalog</option>
-            <option value="Region V - Bicol Region">Region V - Bicol Region</option>
-            <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
-            <option value="Region VII - Central Visayas">Region VII - Central Visayas</option>
-            <option value="Region VIII - Eastern Visayas">Region VIII - Eastern Visayas</option>
-            <option value="Region IX - Zambaonga Peninsula">Region IX - Zambaonga Peninsula</option>
-            <option value="Region X - Northern Mindanao">Region X - Northern Mindanao</option>
-            <option value="Region XI - Davao Region">Region XI - Davao Region</option>
-            <option value="Region XII - SOCCSKSARGEN">Region XII - SOCCSKSARGEN</option>
-            <option value="Region XIII - Caraga">Region XIII - Caraga</option>
-            <option value="NCR - National Capital Region">NCR - National Capital Region</option>
-            <option value="CAR- Cordillera Administrative Region ">CAR- Cordillera Administrative Region </option>
-            <option value="BARMM - Bangsamoro Autonomous Region">BARMM - Bangsamoro Autonomous Region</option>
-          </select>
+      <form action="" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-18">
+        <section class="">
+          <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
           <br>
           <br>
-          <!-- Error message container -->
-          <p id="feedback-form-error" style="color: red; font-weight: bold;"></p>
-          <div class="text-center">
-            <button type="button" value="next" class="bg-emerald-800  p-2 w-1/2  text-lg rounded-lg text-white hover:bg-emerald-600">Next</button>
+          <p class="text-lg text-white font-medium bg-emerald-700 w-fit p-2">Client Information</p>
+          <br>
+          <div class="flex flex-col">
+            <label class="font-medium pb-2"><i>Pangalan</i></label>
+            <input type="text" id="name" name="name" placeholder="Name (Optional)" class="border-2 rounded-lg p-2">
+            <br>
+            <label class="font-medium pb-2"><i>Petsa</i></label>
+            <input type="date" id="date" name="date" value="<?php echo date('Y-m-d'); ?>" placeholder="Date" class="border-2 rounded-lg p-2">
+            <br>
+            <label class="font-medium pb-2"><i>Edad</i></label>
+            <select id="age" name="age" class="border-2 rounded-lg p-2">
+              <option value="" disabled selected>Age</option>
+              <option value="under-19">19 or lower / 19 pababa</option>
+              <option value="20-34">20 - 34</option>
+              <option value="35-49">35 - 49</option>
+              <option value="50-64">50 - 64</option>
+              <option value="65-up">65 and higher / 65 pataas</option>
+            </select>
+            <br>
+            <label class="font-medium pb-2"><i>Kasarian</i></label>
+            <select id="sex" name="sex" class="border-2 rounded-lg p-2">
+              <option value="" disabled selected>Sex</option>
+              <option value="Female">Female / Babae</option>
+              <option value="Male">Male / Lalaki</option>
+            </select>
+            <br>
+            <label class="font-medium pb-2"><i>Uri ng Kliyente</i></label>
+            <select id="customer-type" name="customer-type" onchange="updateServiceOptions()" class="border-2 rounded-lg p-2">
+              <option value="" disabled selected>Customer Type</option>
+              <option value="business">Business</option>
+              <option value="citizen">Citizen</option>
+              <option value="government">Government</option>
+            </select>
+            <p class="pt-2"><b>Notes:</b> <br>
+              <b>Business</b> (private school, corporations, etc.)<br>
+              <b>Citizen</b> (general public, learners, parents, former DepEd employees, researchers, NGOs etc)<br>
+              <b>Government</b> (current DepEd employees or employees of other government agencies & LGU)
+            </p>
+            </p>
+            <br>
+            <label class="font-medium pb-2"><i>Serbisyong Natanggap</i></label>
+            <select id="service-availed" name="service-availed" class="border-2 rounded-lg p-2">
+              <option value="" disabled selected>Service Availed</option>
+            </select>
+            <br>
+            <label class="font-medium pb-2"><i>Rehiyon</i></label>
+            <select id="region" name="region" class="border-2 rounded-lg p-2">
+              <option value="" disabled selected>Region</option>
+              <option value="RegionI - Ilocos Region">Region I - Ilocos Region</option>
+              <option value="Region II - Cagayan Valley">Region II - Cagayan Valley</option>
+              <option value="Region III - Central Luzon">Region III - Central Luzon</option>
+              <option value="Region IV-A - Calabarzon">Region IV-A - Calabarzon</option>
+              <option value="MIMAROPA - Southwestern Tagalog">MIMAROPA - Southwestern Tagalog</option>
+              <option value="Region V - Bicol Region">Region V - Bicol Region</option>
+              <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+              <option value="Region VII - Central Visayas">Region VII - Central Visayas</option>
+              <option value="Region VIII - Eastern Visayas">Region VIII - Eastern Visayas</option>
+              <option value="Region IX - Zambaonga Peninsula">Region IX - Zambaonga Peninsula</option>
+              <option value="Region X - Northern Mindanao">Region X - Northern Mindanao</option>
+              <option value="Region XI - Davao Region">Region XI - Davao Region</option>
+              <option value="Region XII - SOCCSKSARGEN">Region XII - SOCCSKSARGEN</option>
+              <option value="Region XIII - Caraga">Region XIII - Caraga</option>
+              <option value="NCR - National Capital Region">NCR - National Capital Region</option>
+              <option value="CAR- Cordillera Administrative Region ">CAR- Cordillera Administrative Region </option>
+              <option value="BARMM - Bangsamoro Autonomous Region">BARMM - Bangsamoro Autonomous Region</option>
+            </select>
+            <br>
+            <br>
+            <!-- Error message container -->
+            <p id="feedback-form-error" style="color: red; font-weight: bold;"></p>
+            <div class="text-center">
+              <button type="button" value="next" class="bg-emerald-800  p-2 w-1/2  text-lg rounded-lg text-white hover:bg-emerald-600">Next</button>
+            </div>
+            <br>
+            <br>
           </div>
-          <br>
-          <br>
-        </div>
-      </form>
-    </section>
+        </section>
 
     <!--Citizen Charter Awareness Form Section -->
-    <section class="p-5 mb-42">
+    <section class="p-5 ">
       <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
       <br>
       <br>
@@ -411,10 +410,11 @@
         <button type="submit" name="submit" value="submit" class="bg-emerald-800 p-2 w-1/2 text-lg text-white rounded-lg hover:bg-emerald-600">Submit</button>
       </div>
     </section>
+   </form>
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 fix bottom-0 w-full mt-5">
+  <footer class="bg-emerald-950 fix w-full mt-5">
     <section class="text-center py-3">
       <p class="text-white text-sm">
         Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
