@@ -24,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
       { id: "date", name: "Date" },
       { id: "age", name: "Age" },
       { id: "sex", name: "Sex" },
-      { id: "customer-type", name: "Customer Type" },
-      { id: "service-availed", name: "Service Availed" },
+      { id: "customer_type", name: "Customer Type" },
+      { id: "service_availed", name: "Service Availed" },
       { id: "region", name: "Region" },
     ];
 
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  // Function to validate required fields in citizen-charter-form-box
+  // Function to validate required fields in citizen-charter-form
   function validateCitizenCharterAwareness() {
     const errorContainer = document.getElementById("feedback-form-error2");
     if (errorContainer) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
-  // Function to validate required fields in citizen-charter-2-form-box
+  // Function to validate required fields in citizen-charter-form
   function validateCitizenCharterForm() {
     const errorContainer = document.getElementById("feedback-form-error3");
     if (errorContainer) {
@@ -197,31 +197,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add event listener to the submit button
-  document.querySelector('button[name="submit"]').addEventListener('click', function (event) {
-    const clientSatisfactionBox = document.querySelector('.js-client-satisfaction-form');
-    const radioGroups = clientSatisfactionBox.querySelectorAll('input[type="radio"]');
-    const errorContainer = document.getElementById('feedback-form-error4');
-    const radioNames = new Set();
+document.querySelector('button[name="submit"]').addEventListener('click', function (event) {
+  const errorContainer = document.getElementById('feedback-form-error4');
+  const clientSatisfactionBox = document.querySelector('.js-client-satisfaction-form');
+  const radioGroups = clientSatisfactionBox.querySelectorAll('input[type="radio"]');
+  const radioNames = new Set();
 
-    // Collect all unique radio input names
-    radioGroups.forEach(radio => radioNames.add(radio.name));
+  // Collect all unique radio input names
+  radioGroups.forEach(radio => radioNames.add(radio.name));
 
-    // Check if at least one radio is selected for each group
-    let allFilled = true;
-    radioNames.forEach(name => {
-        const group = clientSatisfactionBox.querySelectorAll(`input[name="${name}"]:checked`);
-        if (group.length === 0) {
-            allFilled = false;
-        }
-    });
-
-    if (!allFilled) {
-        event.preventDefault();
-        errorContainer.textContent = "Please answer all questions in the Client Satisfaction section.";
-    } else {
-        errorContainer.textContent = "";
+  let allFilled = true;
+  radioNames.forEach(name => {
+    const group = clientSatisfactionBox.querySelectorAll(`input[name="${name}"]:checked`);
+    if (group.length === 0) {
+      allFilled = false;
     }
   });
+
+  // Check if citizen charter awareness is "no"
+  const yesNoValue = document.querySelector("input[name='yes_no']:checked");
+  const skipCharterValidation = yesNoValue && yesNoValue.value === "no";
+
+  // If not skipping, validate citizen charter form
+  if (!skipCharterValidation && !validateCitizenCharterForm()) {
+    event.preventDefault();
+    return;
+  }
+
+  // Validate client satisfaction
+  if (!allFilled) {
+    event.preventDefault();
+    errorContainer.textContent = "Please answer all questions in the Client Satisfaction section.";
+  } else {
+    errorContainer.textContent = "";
+  }
+});
 
   // Initialize the first section
   showSection(currentSectionIndex);

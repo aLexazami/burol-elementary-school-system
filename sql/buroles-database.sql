@@ -5,8 +5,7 @@ CREATE DATABASE IF NOT EXISTS buroles_database;
 
 USE buroles_database;
 
-/* Table for Feedback form  */
-CREATE TABLE IF NOT EXISTS feedback_table(
+CREATE TABLE IF NOT EXISTS feedback_respondents (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NULL,
     date DATE NOT NULL,
@@ -15,11 +14,16 @@ CREATE TABLE IF NOT EXISTS feedback_table(
     customer_type VARCHAR(50) NOT NULL,
     service_availed VARCHAR(255) NOT NULL,
     region VARCHAR(255) NOT NULL,
-    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS feedback_answers (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    respondent_id INT NOT NULL,
     citizen_charter_awareness VARCHAR(10) NULL,
-    cc1 VARCHAR(255)  NULL,
-    cc2 VARCHAR(255)  NULL,
-    cc3 VARCHAR(255)  NULL,
+    cc1 VARCHAR(255) NULL,
+    cc2 VARCHAR(255) NULL,
+    cc3 VARCHAR(255) NULL,
     sqd1 VARCHAR(255) NOT NULL,
     sqd2 VARCHAR(255) NOT NULL,
     sqd3 VARCHAR(255) NOT NULL,
@@ -28,7 +32,9 @@ CREATE TABLE IF NOT EXISTS feedback_table(
     sqd6 VARCHAR(255) NOT NULL,
     sqd7 VARCHAR(255) NOT NULL,
     sqd8 VARCHAR(255) NOT NULL,
-    remarks TEXT NULL
+    remarks TEXT NULL,
+    FOREIGN KEY (respondent_id) REFERENCES feedback_respondents(id) ON DELETE CASCADE ON UPDATE CASCADE
+
 );
 
 CREATE TABLE IF NOT EXISTS users_table (

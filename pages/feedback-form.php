@@ -31,7 +31,7 @@
   <!-- Main Content Section -->
   <!-- Feedback Form Section -->
   <main class="max-w-4xl mx-auto px-4 pt-10">
-      <form action="" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-18">
+      <form action="/controllers/submit-form.php" method="POST" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-19">
         <section class="js-client-information-form">
           <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
           <br>
@@ -63,11 +63,11 @@
             </select>
             <br>
             <label class="font-medium pb-2"><i>Uri ng Kliyente</i></label>
-            <select id="customer-type" name="customer-type" onchange="updateServiceOptions()" class="border-2 rounded-lg p-2">
+            <select id="customer_type" name="customer_type" onchange="updateServiceOptions()" class="border-2 rounded-lg p-2">
               <option value="" disabled selected>Customer Type</option>
-              <option value="business">Business</option>
-              <option value="citizen">Citizen</option>
-              <option value="government">Government</option>
+              <option value="Business">Business</option>
+              <option value="Citizen">Citizen</option>
+              <option value="Government">Government</option>
             </select>
             <p class="pt-2"><b>Notes:</b> <br>
               <b>Business</b> (private school, corporations, etc.)<br>
@@ -77,7 +77,7 @@
             </p>
             <br>
             <label class="font-medium pb-2"><i>Serbisyong Natanggap</i></label>
-            <select id="service-availed" name="service-availed" class="border-2 rounded-lg p-2">
+            <select id="service_availed" name="service_availed" class="border-2 rounded-lg p-2">
               <option value="" disabled selected>Service Availed</option>
             </select>
             <br>
