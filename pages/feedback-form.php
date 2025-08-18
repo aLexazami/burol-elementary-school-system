@@ -32,7 +32,7 @@
   <!-- Feedback Form Section -->
   <main class="max-w-4xl mx-auto px-4 pt-10">
       <form action="" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-18">
-        <section class="">
+        <section class="js-client-information-form">
           <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
           <br>
           <br>
@@ -107,7 +107,7 @@
             <!-- Error message container -->
             <p id="feedback-form-error" style="color: red; font-weight: bold;"></p>
             <div class="text-center">
-              <button type="button" value="next" class="bg-emerald-800  p-2 w-1/2  text-lg rounded-lg text-white hover:bg-emerald-600">Next</button>
+              <button type="button" value="next" class="bg-emerald-800  p-2 w-1/2  text-lg rounded-lg text-white hover:bg-emerald-600 mt-5">Next</button>
             </div>
             <br>
             <br>
@@ -115,7 +115,7 @@
         </section>
 
     <!--Citizen Charter Awareness Form Section -->
-    <section class="p-5 ">
+    <section class="js-citizen-awareness-form p-5 ">
       <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
       <br>
       <br>
@@ -142,7 +142,7 @@
     </section>
 
     <!-- Citizen Charter 2 Form Section -->
-    <section class="p-5 ">
+    <section class="js-citizen-charter-form p-5 ">
       <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
       <br>
       <br>
@@ -210,7 +210,7 @@
     </section>
 
     <!-- Client Satisfaction Form Section -->
-    <section class="p-5">
+    <section class="js-client-satisfaction-form p-5">
       <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
       <br>
       <br>
@@ -421,6 +421,9 @@
       </p>
     </section>
   </footer>
+
+  <script src="/assets/js/feedbackFormNavigation.js"></script>
+  <script src="/assets/js/serviceAvailedOptions.js"></script>
 </body>
 
 </html>
