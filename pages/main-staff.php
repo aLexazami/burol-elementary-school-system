@@ -15,38 +15,37 @@ error_reporting(E_ALL);
 </head>
 
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+  
   <!-- Header Section -->
   <header class=" bg-white shadow-md sticky-top-0 z-10">
     <section class="px-10  flex justify-between items-center">
       <div class="flex items-center py-2">
-        <img src="../assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-15 ">
-        <p class="text-2xl font-medium text-emerald-800 ml-5">
+        <img src="../assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-12 ">
+        <p class="text-xl font-medium text-emerald-800 ml-5">
           Burol Elementary School
         </p>
       </div>
-      <nav class="">
-        <!-- Navigation Buttons -->
-          <button id="menu-btn" class="flex flex-row items-center space-x-3 cursor-pointer">
-            <img src="../assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full">
-            <div class=" text-emerald-800">
-              <p class="font-medium">Admin Bot</p>
-              <p>STAFF</p>
-            </div>
-          </button>
 
-        <!-- Navigation Links -->
-        <div id="menu-links" class="hidden absolute top-20 right-7 p-3 bg-white shadow-lg rounded-sm">
-          <a href="/pages/main-staff.php" class="text-emerald-800 hover:bg-emerald-600  flex items-center opacity-80 p-2 text-sm rounded-sm">
+        <!-- Navigation Buttons -->
+        <button id="menu-btn" class="flex flex-row items-center space-x-3 cursor-pointer">
+          <img src="../assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full">
+          <div class=" text-emerald-800">
+            <p class="font-medium">Admin Bot</p>
+            <p>STAFF</p>
+          </div>
+        </button>
+
+        <div id="menu-links" class="hidden absolute top-17 right-7 px-3 bg-white shadow-lg rounded-sm h-31">
+          <a href="/pages/main-staff.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600 ">
             <img src="../assets/img/profile.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">My Account
           </a>
-          <a href="" class="text-emerald-800 hover:bg-emerald-600 flex items-center opacity-80 p-2 text-sm rounded-sm">
+          <a href="" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
             <img src="../assets/img/notif.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Notification
           </a>
-          <a href="/controllers/log-out.php" class="text-emerald-800  hover:bg-emerald-600 flex items-center opacity-80 p-2 text-sm rounded-sm">
+          <a href="/controllers/log-out.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
             <img src="../assets/img/logout.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Logout
           </a>
         </div>
-      </nav>
     </section>
   </header>
 
@@ -67,15 +66,7 @@ error_reporting(E_ALL);
   </footer>
 
 
-  <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const menuLinks = document.getElementById('menu-links');
-
-    menuBtn.addEventListener('click', () => {
-      menuLinks.classList.toggle('hidden');
-    });
-  </script>
-
+  <script src="../assets/js/button.js"></script>
 </body>
 
 </html>
