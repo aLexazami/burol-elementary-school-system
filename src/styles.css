@@ -13,10 +13,14 @@
     --color-amber-200: oklch(92.4% 0.12 95.746);
     --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-700: oklch(55.5% 0.163 48.998);
+    --color-yellow-300: oklch(90.5% 0.182 98.111);
+    --color-green-100: oklch(96.2% 0.044 156.743);
     --color-emerald-600: oklch(59.6% 0.145 163.225);
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
     --color-emerald-950: oklch(26.2% 0.051 172.552);
+    --color-blue-100: oklch(93.2% 0.032 255.585);
+    --color-violet-500: oklch(60.6% 0.25 292.717);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -205,11 +209,29 @@
   .top-15 {
     top: calc(var(--spacing) * 15);
   }
+  .top-16 {
+    top: calc(var(--spacing) * 16);
+  }
   .top-17 {
     top: calc(var(--spacing) * 17);
   }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
+  .top-30 {
+    top: calc(var(--spacing) * 30);
+  }
   .right-7 {
     right: calc(var(--spacing) * 7);
+  }
+  .right-8 {
+    right: calc(var(--spacing) * 8);
+  }
+  .right-10 {
+    right: calc(var(--spacing) * 10);
+  }
+  .right-20 {
+    right: calc(var(--spacing) * 20);
   }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
@@ -410,11 +432,21 @@
   .justify-center {
     justify-content: center;
   }
+  .justify-end {
+    justify-content: flex-end;
+  }
   .space-y-2 {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 0;
       margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
       margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+  .space-x-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .space-x-3 {
@@ -429,6 +461,20 @@
       --tw-space-x-reverse: 0;
       margin-inline-start: calc(calc(var(--spacing) * 4) * var(--tw-space-x-reverse));
       margin-inline-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-5 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 5) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 5) * calc(1 - var(--tw-space-x-reverse)));
+    }
+  }
+  .space-x-6 {
+    :where(& > :not(:last-child)) {
+      --tw-space-x-reverse: 0;
+      margin-inline-start: calc(calc(var(--spacing) * 6) * var(--tw-space-x-reverse));
+      margin-inline-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-x-reverse)));
     }
   }
   .rounded {
@@ -473,6 +519,9 @@
   .bg-amber-700 {
     background-color: var(--color-amber-700);
   }
+  .bg-blue-100 {
+    background-color: var(--color-blue-100);
+  }
   .bg-emerald-700 {
     background-color: var(--color-emerald-700);
   }
@@ -482,8 +531,17 @@
   .bg-emerald-950 {
     background-color: var(--color-emerald-950);
   }
+  .bg-green-100 {
+    background-color: var(--color-green-100);
+  }
+  .bg-violet-500 {
+    background-color: var(--color-violet-500);
+  }
   .bg-white {
     background-color: var(--color-white);
+  }
+  .bg-yellow-300 {
+    background-color: var(--color-yellow-300);
   }
   .bg-gradient-to-b {
     --tw-gradient-position: to bottom in oklab;
