@@ -42,7 +42,7 @@ error_reporting(E_ALL);
           <a href="" class="text-emerald-800 hover:bg-emerald-600 flex items-center opacity-80 p-2 text-sm rounded-sm">
             <img src="../assets/img/notif.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Notification
           </a>
-          <a href="/pages/log-out.php" class="text-emerald-800  hover:bg-emerald-600 flex items-center opacity-80 p-2 text-sm rounded-sm">
+          <a href="/controllers/log-out.php" class="text-emerald-800  hover:bg-emerald-600 flex items-center opacity-80 p-2 text-sm rounded-sm">
             <img src="../assets/img/logout.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Logout
           </a>
         </div>
