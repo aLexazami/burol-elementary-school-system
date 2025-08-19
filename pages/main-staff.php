@@ -18,7 +18,7 @@ error_reporting(E_ALL);
 
   <!-- Header Section -->
   <header class=" shadow-md sticky-top-0 z-10 bg-white">
-    <section class=" flex justify-between px-10 items-center">
+    <section class=" max-w-7xl m-auto flex justify-between px-10 items-center">
       <div class="flex items-center py-2 ">
         <img src="../assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-12 ">
         <p class="text-xl font-medium text-emerald-800 ml-5">
@@ -27,25 +27,33 @@ error_reporting(E_ALL);
       </div>
 
       <!-- Date and Time Section -->
-      <div class="flex justify-end space-x-6  ">
-        <div class="flex  items-center text-sm text-emerald-800 font-bold">
-          <span id="date-time"></span>
-        </div>
+      <div class="flex text-sm text-emerald-800 font-bold ">
+        <span id="date-time"></span>
+      </div>
+      <div class="flex justify-end items-center">
 
+
+        <!-- Nav Menu for Mobile -->
         <!-- Navigation Buttons -->
-        <div class="flex flex-col">
-          <button id="menu-btn" class="flex flex-row items-center space-x-3 cursor-pointer ">
+        <div class=" flex flex-row">
+          <button id="menu-btn" class=" flex flex-row items-center space-x-3 cursor-pointer mr-2">
             <img src="../assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full">
             <div class=" text-emerald-800">
               <p class="font-medium">Admin Bot</p>
               <p>STAFF</p>
             </div>
           </button>
-          <div id="menu-links" class="hidden absolute top-17 right-8  px-3 bg-white shadow-lg rounded-sm h-31">
+          <a>
+
+          </a>
+          <div id="menu-links" class="md:hidden absolute top-17 max-md:top-20   px-3 bg-white shadow-lg rounded-sm h-40">
             <a href="/pages/main-staff.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600 ">
               <img src="../assets/img/profile.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">My Account
             </a>
-            <a href="" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
+            <a href="/pages/main-staff.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600 ">
+              <img src="../assets/img/message.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Message
+            </a>
+            <a href="/pages/main-staff.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600 ">
               <img src="../assets/img/notif.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">Notification
             </a>
             <a href="/controllers/log-out.php" class="menu-link flex items-center opacity-0 translate-y-2 transition-all duration-300 ease-out p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
@@ -53,7 +61,45 @@ error_reporting(E_ALL);
             </a>
           </div>
         </div>
+
+        <!-- Nav Menu for Desktop -->
+        <div class="max-md:hidden flex space-x-2">
+          <div class=" flex items-center">
+            <a href="" class="group relative flex items-center p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
+              <img src="../assets/img/profile.png" alt="Profile" class="h-5 w-5 rounded-full">
+              <span class="absolute top-10 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
+                My Account
+              </span>
+            </a>
+          </div>
+          <div class=" flex items-center">
+            <a href="" class="group relative flex items-center p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
+              <img src="../assets/img/message.png" alt="Profile" class="h-5 w-5 rounded-full">
+              <span class="absolute top-10 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
+                Message
+              </span>
+            </a>
+          </div>
+          <div class=" flex items-center">
+            <a href="" class="group relative flex items-center p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
+              <img src="../assets/img/notif.png" alt="Profile" class="h-5 w-5 rounded-full">
+              <span class="absolute top-10 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
+                Notification
+              </span>
+            </a>
+          </div>
+          <div class=" flex items-center">
+            <a href="" class="group relative flex items-center p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
+              <img src="../assets/img/logout.png" alt="Profile" class="h-5 w-5 rounded-full">
+              <span class="absolute top-10 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
+                Logout
+              </span>
+            </a>
+          </div>
+        </div>
       </div>
+
+
     </section>
   </header>
 
