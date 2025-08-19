@@ -36,7 +36,7 @@ error_reporting(E_ALL);
         <!-- Nav Menu for Mobile -->
         <!-- Navigation Buttons -->
         <div class=" flex flex-row">
-          <button id="menu-btn" class=" flex flex-row items-center space-x-3 cursor-pointer mr-2">
+          <button id="menu-btn" class=" flex flex-row items-center space-x-3 max-md:cursor-pointer mr-2">
             <img src="../assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full">
             <div class=" text-emerald-800">
               <p class="font-medium">Admin Bot</p>
