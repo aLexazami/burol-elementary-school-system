@@ -11,6 +11,16 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../index.php");
     exit();
 }
+
+require_once '../db-connection.php';
+require_once '../includes/functions.php';
+
+
+$newCount = getRespondentCount('new', $conn);
+$weeklyCount = getRespondentCount('weekly', $conn);
+$totalCount = getRespondentCount('total', $conn);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +49,29 @@ if (!isset($_SESSION['username'])) {
       </div>
       <!-- Right Side Context Section -->
       <div class="bg-white p-2 h-150">
-        <h1>This is Right Context for Dashboard</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+  <!-- New -->
+  <div class="bg-white shadow-md rounded-lg p-4 text-center">
+    <img src="/assets/icons/new.png" class="mx-auto h-6 w-6 mb-2">
+    <p class="text-sm text-gray-500 uppercase">New</p>
+    <p class="text-2xl font-bold text-emerald-800"><?= $newCount ?></p>
+  </div>
+
+  <!-- Weekly -->
+  <div class="bg-white shadow-md rounded-lg p-4 text-center">
+    <img src="/assets/icons/weekly.png" class="mx-auto h-6 w-6 mb-2">
+    <p class="text-sm text-gray-500 uppercase">Weekly</p>
+    <p class="text-2xl font-bold text-emerald-800"><?= $weeklyCount ?></p>
+  </div>
+
+  <!-- Total -->
+  <div class="bg-white shadow-md rounded-lg p-4 text-center">
+    <img src="/assets/icons/total.png" class="mx-auto h-6 w-6 mb-2">
+    <p class="text-sm text-gray-500 uppercase">Total</p>
+    <p class="text-2xl font-bold text-emerald-800"><?= $totalCount ?></p>
+  </div>
+</div>
+      </div>
       </div>
     </section>
   </main>
