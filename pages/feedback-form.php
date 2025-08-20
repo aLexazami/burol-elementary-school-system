@@ -8,7 +8,7 @@
   <title>BES Feedback Form</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen ">
+<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen flex flex-col ">
   <!-- Header Section -->
   <header class=" bg-white shadow-md sticky-top-0 z-10">
     <section class="max-w-4xl mx-auto flex justify-between items-center">
@@ -414,13 +414,7 @@
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 fix w-full mt-5">
-    <section class="text-center py-3">
-      <p class="text-white text-sm">
-        Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
-      </p>
-    </section>
-  </footer>
+ <?php include '../includes/footer.php'?>
 
   <script src="/assets/js/feedbackFormNavigation.js"></script>
   <script src="/assets/js/serviceAvailedOptions.js"></script>

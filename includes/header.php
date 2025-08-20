@@ -27,7 +27,7 @@
       <a>
 
       </a>
-      <div id="menu-links" class="md:hidden absolute top-17 max-md:top-20   p-3 bg-white shadow-lg rounded-sm ">
+      <div id="menu-links" class="hidden md:hidden absolute top-17 max-md:top-20   p-3 bg-white shadow-lg rounded-sm ">
         <a href="/pages/main-staff.php" class="menu-link flex items-center  p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600 ">
           <img src="/assets/img/profile.png" alt="Profile" class="h-5 w-5 rounded-full mr-3">My Account
         </a>

@@ -39,13 +39,7 @@ if (!isset($_SESSION['username'])) {
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 absolute bottom-0 w-full">
-    <section class="text-center py-3">
-      <p class="text-white text-sm">
-        Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
-      </p>
-    </section>
-  </footer>
+ <?php include '../includes/footer.php'?>
 
 
   <script src="../assets/js/button.js"></script>

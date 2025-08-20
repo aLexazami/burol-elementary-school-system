@@ -23,7 +23,7 @@ if (!isset($_SESSION['username'])) {
   <title>Burol Elementary School</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen flex flex-col">
 
   <!-- Header Section -->
   <header class=" shadow-md sticky-top-0 z-10 bg-white">
@@ -31,7 +31,7 @@ if (!isset($_SESSION['username'])) {
   </header>
 
   <!-- Main Content Section -->
-  <main>
+  <main class="">
     <section class="flex mt-2">
       <!-- Left Side Navigation Section -->
       <div class=" bg-white p-2 mr-3 space-y-2 ">
@@ -45,13 +45,7 @@ if (!isset($_SESSION['username'])) {
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 absolute bottom-0 w-full">
-    <section class="text-center py-3">
-      <p class="text-white text-sm">
-        Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
-      </p>
-    </section>
-  </footer>
+ <?php include '../includes/footer.php'?>
 
 
   <script src="../assets/js/button.js"></script>
