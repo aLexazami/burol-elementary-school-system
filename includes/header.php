@@ -48,7 +48,7 @@
       <div class=" flex items-center">
         <a href="" class="group relative flex items-center p-2 text-sm rounded-sm text-emerald-800 hover:bg-emerald-600">
           <img src="/assets/img/profile.png" alt="Profile" class="h-5 w-5 rounded-full">
-          <span class="absolute top-10 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
+          <span class="absolute top-10 w-23 opacity-0 translate-y-1 transition-all duration-300 text-sm bg-white text-emerald-800 px-2 py-1 rounded group-hover:opacity-100 group-hover:translate-y-0">
             My Account
           </span>
         </a>
