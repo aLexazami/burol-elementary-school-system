@@ -35,7 +35,7 @@ if (!isset($_SESSION['username'])) {
     <section class="flex mt-2">
       <!-- Left Side Navigation Section -->
       <div class=" bg-white p-2 mr-3 space-y-2 ">
-          <?php include '../../includes/side-nav.php'?>
+          <?php include '../../includes/side-nav-admin.php'?>
       </div>
       <!-- Right Side Context Section -->
       <div class="bg-white p-2 h-150">
