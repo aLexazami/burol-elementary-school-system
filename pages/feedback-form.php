@@ -31,7 +31,7 @@
   <!-- Main Content Section -->
   <!-- Feedback Form Section -->
   <main class="max-w-4xl mx-auto px-4 pt-10">
-      <form action="/controllers/submit-form.php" method="POST" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-19">
+      <form  action="/controllers/submit-form.php" method="POST" class="bg-white opacity-75 border-2 border-emerald-800 rounded-lg p-8 mb-19">
         <section class="js-client-information-form">
           <h4 class="text-center font-bold text-xl">109843 BUROL ELEMENTARY SCHOOL Client Satisfaction Measurement (CSM) (2025)</h4>
           <br>
