@@ -26,7 +26,7 @@ error_reporting(E_ALL);
       </div>
       <nav>
         <ul class="flex space-x-4 mr-3">
-          <li><a href="#signin" class="text-emerald-800 text-md hover:text-emerald-600 pr-10">Sign in</a></li>
+          <li><a href="/index.php" class="text-emerald-800 text-md hover:text-emerald-600 pr-10">Sign in</a></li>
           <li><a href="/pages/feedback-form.php" class="text-emerald-800 text-md hover:text-emerald-600">Feedback</a></li>
           <li><a href="/pages/faqs.php" class="text-emerald-800 text-md hover:text-emerald-600">FAQs</a></li>
         </ul>

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
     $citizenCharterAwareness = ucfirst(strtolower($citizenCharterAwareness));
   }
 
-  if ($citizenCharterAwareness === "no") {
+  if ($citizenCharterAwareness === "No") {
     $cc1 = null;
     $cc2 = null;
     $cc3 = null;
