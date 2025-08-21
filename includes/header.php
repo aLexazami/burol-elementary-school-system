@@ -17,7 +17,7 @@
     <!-- Navigation Buttons -->
     <div class=" flex flex-row">
       <button id="menu-btn" class=" flex flex-row items-center space-x-3 max-md:cursor-pointer mr-2">
-        <img src="/assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full">
+        <img src="/assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full border-2 border-emerald-400">
         <div class=" text-emerald-800">
           <p class="font-medium"> <?php echo htmlspecialchars($_SESSION['firstName'] . ' ' . $_SESSION['lastName']); ?></p>
           <p class="uppercase"><?php echo htmlspecialchars($_SESSION['role']); ?></p>

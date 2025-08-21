@@ -8,8 +8,8 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php");
-    exit();
+  header("Location: ../index.php");
+  exit();
 }
 
 require_once '../db-connection.php';
@@ -41,43 +41,45 @@ $annualCount = getRespondentCount('annual', $conn);
   </header>
 
   <!-- Main Content Section -->
-  <main class="">
-    <section class="flex mt-2">
-      <!-- Left Side Navigation Section -->
-      <div class=" bg-white p-2 mr-3 space-y-2 ">
-          <?php include '../includes/side-nav-admin.php'?>
-      </div>
-      <!-- Right Side Context Section -->
-      <div class="bg-white p-2 h-150">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-  <!-- New -->
-  <div class="bg-white shadow-md rounded-lg p-4 text-center">
-    <img src="/assets/icons/new.png" class="mx-auto h-6 w-6 mb-2">
-    <p class="text-sm text-gray-500 uppercase">New</p>
-    <p class="text-2xl font-bold text-emerald-800"><?= $newCount ?></p>
-  </div>
+  <main class=" grid grid-cols-[248px_1fr] gap-4 mt-2 m-2">
+  <!-- Left Side Navigation -->
+  <aside class="bg-white p-2 space-y-2">
+    <?php include '../includes/side-nav-admin.php' ?>
+  </aside>
 
-  <!-- Weekly -->
-  <div class="bg-white shadow-md rounded-lg p-4 text-center">
-    <img src="/assets/icons/weekly.png" class="mx-auto h-6 w-6 mb-2">
-    <p class="text-sm text-gray-500 uppercase">Weekly</p>
-    <p class="text-2xl font-bold text-emerald-800"><?= $weeklyCount ?></p>
-  </div>
+  <!-- Right Side Content -->
+  <section class="bg-white p-2">
+    <div class="bg-green-700 p-2 grid grid-cols-3 gap-4 mt-6">
+      <div class="bg-blue-200 col-span-3">
+        <h1 class="font-bold text-center text-lg">Respondent</h1>
+      </div>
 
-  <!-- Total -->
-  <div class="bg-white shadow-md rounded-lg p-4 text-center">
-    <img src="/assets/icons/total.png" class="mx-auto h-6 w-6 mb-2">
-    <p class="text-sm text-gray-500 uppercase">Total</p>
-    <p class="text-2xl font-bold text-emerald-800"><?= $annualCount ?></p>
-  </div>
-</div>
+      <!-- New -->
+      <div class="bg-white shadow-md rounded-lg p-4 text-center">
+        <img src="/assets/icons/new.png" class="mx-auto h-6 w-6 mb-2">
+        <p class="text-sm text-gray-500 uppercase">New</p>
+        <p class="text-2xl font-bold text-emerald-800"><?= $newCount ?></p>
       </div>
+
+      <!-- Weekly -->
+      <div class="bg-white shadow-md rounded-lg p-4 text-center">
+        <img src="/assets/icons/weekly.png" class="mx-auto h-6 w-6 mb-2">
+        <p class="text-sm text-gray-500 uppercase">Weekly</p>
+        <p class="text-2xl font-bold text-emerald-800"><?= $weeklyCount ?></p>
       </div>
-    </section>
-  </main>
+
+      <!-- Total -->
+      <div class="bg-white shadow-md rounded-lg p-4 text-center">
+        <img src="/assets/icons/total.png" class="mx-auto h-6 w-6 mb-2">
+        <p class="text-sm text-gray-500 uppercase">Total</p>
+        <p class="text-2xl font-bold text-emerald-800"><?= $annualCount ?></p>
+      </div>
+    </div>
+  </section>
+</main>
 
   <!--Footer Section-->
- <?php include '../includes/footer.php'?>
+  <?php include '../includes/footer.php' ?>
 
 
   <script src="../assets/js/button.js"></script>
