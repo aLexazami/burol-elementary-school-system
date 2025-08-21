@@ -11,6 +11,9 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../index.php");
     exit();
 }
+
+
+include(__DIR__ . '/../../controllers/archive.php');
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +42,15 @@ if (!isset($_SESSION['username'])) {
       </div>
       <!-- Right Side Context Section -->
       <div class="bg-white p-2 h-150">
-        <h1>This is Right Context for Feedback Report</h1>
+        <select id="archive-year" onchange="loadArchive(this.value)">
+  <option value="2025">2025</option>
+  <option value="2024">2024</option>
+  <option value="2023">2023</option>
+</select>
+<div id="archive-results" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+  <!-- Dynamically insert respondent cards here -->
+</div>
+
       </div>
     </section>
   </main>
@@ -56,6 +67,13 @@ if (!isset($_SESSION['username'])) {
 
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>
+  <script>function loadArchive(year) {
+  fetch(`archive.php?year=${year}`)
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('archive-results').innerHTML = html;
+    });
+}</script>
 </body>
 
 </html>
