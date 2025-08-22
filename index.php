@@ -16,19 +16,19 @@ error_reporting(E_ALL);
 
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
   <!-- Header Section -->
-  <header class=" bg-white shadow-md sticky-top-0 z-10">
+  <header class=" bg-emerald-950 shadow-md sticky-top-0 z-10 p-1">
     <section class="max-w-4xl mx-auto flex justify-between items-center">
       <div class="flex items-center ">
-        <img src="./assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-20 ">
-        <p class="text-4xl font-medium text-emerald-800 ml-5">
+        <img src="./assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-20 border rounded-full bg-white">
+        <p class="text-3xl font-medium text-white ml-5">
           Burol Elementary School
         </p>
       </div>
       <nav>
         <ul class="flex space-x-4 mr-3">
-          <li><a href="#signin" class="text-emerald-800 text-md hover:text-emerald-600 pr-10">Sign in</a></li>
-          <li><a href="/pages/feedback-form.php" class="text-emerald-800 text-md hover:text-emerald-600">Feedback</a></li>
-          <li><a href="/pages/faqs.php" class="text-emerald-800 text-md hover:text-emerald-600">FAQs</a></li>
+          <li><a href="/index.php" class="text-white text-md hover:text-emerald-400 pr-10">Sign in</a></li>
+          <li><a href="/pages/feedback-form.php" class="text-white text-md hover:text-emerald-400">Feedback</a></li>
+          <li><a href="/pages/faqs.php" class="text-white text-md hover:text-emerald-400">FAQs</a></li>
         </ul>
       </nav>
     </section>
@@ -37,7 +37,7 @@ error_reporting(E_ALL);
   <!-- Main Content Section -->
   <!-- Login Section-->
   <main class="max-w-4xl mx-auto px-4 pt-10 ">
-    <section id="signin" class="flex flex-col h-auto py-10 ">
+    <section class="flex flex-col h-auto py-10 ">
       <form action="/controllers/login.php" method="POST" class="bg-white shadow-md rounded-lg p-8 w-105 m-auto opacity-75 border-2 border-emerald-800">
         <p class="text-emerald-800 text-2xl text-center font-bold">
           SIGN IN

@@ -1,7 +1,7 @@
 <header  class=" shadow-md sticky-top-0 z-10 bg-emerald-950 text-white p-1">
   <section class=" max-w-7xl m-auto flex justify-between px-10 items-center">
     <div class="flex items-center py-2 ">
-      <img src="/assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-12 border rounded-3xl bg-white ">
+      <img src="/assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-12 border rounded-full bg-white ">
       <p class="text-xl font-medium  ml-5">
         Burol Elementary School
       </p>
