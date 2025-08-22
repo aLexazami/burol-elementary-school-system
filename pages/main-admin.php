@@ -13,12 +13,10 @@ if (!isset($_SESSION['username'])) {
 }
 
 require_once '../db-connection.php';
-require_once '../includes/functions.php';
+require_once '../controllers/functions.php';
 
+require_once '../controllers/respondent-counts.php';
 
-$newCount = getRespondentCount('new', $pdo);
-$weeklyCount = getRespondentCount('weekly', $pdo);
-$annualCount = getRespondentCount('annual', $pdo);
 
 
 ?>
@@ -54,21 +52,21 @@ $annualCount = getRespondentCount('annual', $pdo);
         <div class="bg-white shadow-md rounded-lg p-4 text-center">
           <img src="/assets/img/new.png" class="mx-auto h-15 w-15 mb-2  ">
           <p class="text-sm text-gray-500 uppercase ">New</p>
-          <p class="text-2xl font-bold "><?= $newCount ?></p>
+          <p id="new-count" class="text-2xl font-bold "><?= $newCount ?></p>
         </div>
 
         <!-- Weekly -->
         <div class="bg-white shadow-md rounded-lg p-4 text-center">
           <img src="/assets/img/weekly.png" class="mx-auto h-15 w-15 mb-2 ">
           <p class="text-sm text-gray-500 uppercase">Weekly</p>
-          <p class="text-2xl font-bold"><?= $weeklyCount ?></p>
+          <p id="weekly-count"  class="text-2xl font-bold"><?= $weeklyCount ?></p>
         </div>
 
         <!-- Total -->
         <div class="bg-white shadow-md rounded-lg p-4 text-center">
           <img src="/assets/img/total.png" class="mx-auto h-15 w-15 mb-2 ">
           <p class="text-sm text-gray-500 uppercase">Total</p>
-          <p class="text-2xl font-bold "><?= $annualCount ?></p>
+          <p id="annual-count" class="text-2xl font-bold "><?= $annualCount ?></p>
         </div>
       </div>
     </section>
@@ -77,7 +75,7 @@ $annualCount = getRespondentCount('annual', $pdo);
   <!--Footer Section-->
   <?php include '../includes/footer.php' ?>
 
-
+  <script src="../assets/js/update-respondent-counts.js"></script>
   <script src="../assets/js/button.js"></script>
   <script src="../assets/js/date-time.js"></script>
 </body>
