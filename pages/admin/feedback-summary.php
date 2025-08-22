@@ -8,8 +8,8 @@ session_start();
 
 // Check if user is logged in
 if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php");
-    exit();
+  header("Location: ../index.php");
+  exit();
 }
 ?>
 
@@ -20,37 +20,30 @@ if (!isset($_SESSION['username'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/src/styles.css" rel="stylesheet">
-  <title>Burol Elementary School</title>
+  <title>Feedback Summary</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+<body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
 
   <!-- Header Section -->
-    <?php include('../../includes/header.php'); ?>
+  <?php include('../../includes/header.php'); ?>
 
 
-  <!-- Main Content Section -->
-  <main>
-    <section class="flex mt-2">
-      <!-- Left Side Navigation Section -->
-          <?php include '../../includes/side-nav-admin.php'?>
+  <!-- Feedback Respondents Main Content Section -->
+  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 h-screen">
+    <!-- Left Side Navigation Section -->
+    <?php include '../../includes/side-nav-admin.php' ?>
 
-      <!-- Right Side Context Section -->
-      <div class="bg-white p-2 h-150">
+    <!-- Right Side Context Section -->
+    <section class="bg-white p-2">
+      <div class="p-2 grid grid-cols-3 gap-4 mt-6">
         <h1>This is Right Context for Feedback Summary</h1>
       </div>
     </section>
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 absolute bottom-0 w-full">
-    <section class="text-center py-3">
-      <p class="text-white text-sm">
-        Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
-      </p>
-    </section>
-  </footer>
-
+  <?php include '../../includes/footer.php' ?>
 
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>

@@ -23,55 +23,33 @@ include(__DIR__ . '/../../controllers/archive.php');
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/src/styles.css" rel="stylesheet">
-  <title>Burol Elementary School</title>
+  <title>Feedback Report</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+<body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
 
   <!-- Header Section -->
     <?php include('../../includes/header.php'); ?>
 
 
-  <!-- Main Content Section -->
-  <main>
-    <section class="flex mt-2">
+  <!-- Feedback Respondents Main Content Section -->
+  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 h-screen">
       <!-- Left Side Navigation Section -->
           <?php include '../../includes/side-nav-admin.php'?>
 
       <!-- Right Side Context Section -->
-      <div class="bg-white p-2 h-150">
-        <select id="archive-year" onchange="loadArchive(this.value)">
-  <option value="2025">2025</option>
-  <option value="2024">2024</option>
-  <option value="2023">2023</option>
-</select>
-<div id="archive-results" class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-  <!-- Dynamically insert respondent cards here -->
-</div>
-
-      </div>
-    </section>
+      <section class="bg-white p-2">
+        <div class="p-2 grid grid-cols-3 gap-4 mt-6">
+          <h1>This is Right Context for Feedback Report</h1>
+        </div>
+      </section>
   </main>
 
   <!--Footer Section-->
-  <footer class="bg-emerald-950 absolute bottom-0 w-full">
-    <section class="text-center py-3">
-      <p class="text-white text-sm">
-        Copyrights &copy; 2025. Burol Elementary School. All rights reserved.
-      </p>
-    </section>
-  </footer>
-
+ <?php include '../../includes/footer.php' ?>
 
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>
-  <script>function loadArchive(year) {
-  fetch(`archive.php?year=${year}`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('archive-results').innerHTML = html;
-    });
-}</script>
 </body>
 
 </html>

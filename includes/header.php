@@ -21,7 +21,7 @@
           <img src="/assets/img/user.png" alt="Profile" class="h-10 w-10 rounded-full border-2 border-emerald-400">
           <div >
             <p class="font-medium"> <?php echo htmlspecialchars($_SESSION['firstName'] . ' ' . $_SESSION['lastName']); ?></p>
-            <p class="uppercase text-sm"><?php echo htmlspecialchars($_SESSION['role']); ?></p>
+            <p class="uppercase text-sm"><?php echo htmlspecialchars($_SESSION['role_name']); ?></p>
             </p>
           </div>
         </button>
