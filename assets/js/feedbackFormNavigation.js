@@ -3,6 +3,7 @@
 // It shows/hides sections based on user input and manages the flow of the form.
 document.addEventListener("DOMContentLoaded", function () {
   const sections = [
+    document.querySelector(".js-terms-agreement-form"),
     document.querySelector(".js-client-information-form"),
     document.querySelector(".js-citizen-awareness-form"),
     document.querySelector(".js-citizen-charter-form"),
@@ -11,12 +12,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let currentSectionIndex = 0;
 
+    const agreeCheckbox = document.getElementById("agree-checkbox");
+const agreeButton = document.getElementById("agree-button");
+
+agreeCheckbox.addEventListener("change", () => {
+  agreeButton.disabled = !agreeCheckbox.checked;
+});
+
+agreeButton.addEventListener("click", () => {
+  currentSectionIndex = 1; // Move to client info form
+  showSection(currentSectionIndex);
+});
+
   // Function to show the current section and hide others
   function showSection(index) {
     sections.forEach((section, i) => {
       section.style.display = i === index ? "block" : "none";
     });
   }
+
+  
+
 
   // Function to validate required fields in client-information-form-box
   function validateClientInformationForm() {
@@ -136,55 +152,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to handle navigation between sections
   // This function is called when the user clicks the next or previous button
-  function handleNavigation(buttonType) {
-    if (buttonType === "next") {
-      if (currentSectionIndex === 0) {
-        // Validate feedback-form-box before proceeding
-        if (!validateClientInformationForm()) {
-          return;
-        }
+function handleNavigation(buttonType) {
+  if (buttonType === "next") {
+    if (currentSectionIndex === 1) {
+      // Validate client-information-form
+      if (!validateClientInformationForm()) {
+        return;
       }
-      if (currentSectionIndex === 1) {
-        // Validate citizen-charter-form-box before proceeding
-        if (!validateCitizenCharterAwareness()) {
-          return;
-        }
-        const yesNoValue = document.querySelector("input[name='yes_no']:checked");
-        if (yesNoValue && yesNoValue.value === "no") {
-          currentSectionIndex = 3; // Skip to client-satisfaction-form-box
-        } else {
-          currentSectionIndex++;
-        }
-      } else if (currentSectionIndex === 2) {
-        // Validate citizen-charter-2-form-box before proceeding
-        if (!validateCitizenCharterForm()) {
-          return;
-        }
-        currentSectionIndex++;
-      } else if (currentSectionIndex === 3) {
-        // Validate client-satisfaction-form-box before proceeding
-        if (!validateClientSatisfactionForm()) {
-          return;
-        }
-        currentSectionIndex++;
-      } else if (currentSectionIndex < sections.length - 1) {
-        currentSectionIndex++;
+      currentSectionIndex++; // Move to citizen-awareness-form
+    } else if (currentSectionIndex === 2) {
+      // Validate citizen-awareness-form
+      if (!validateCitizenCharterAwareness()) {
+        return;
       }
-    } else if (buttonType === "previous") {
-      if (currentSectionIndex === 3) {
-        // Go back to citizen-charter-form-box if user picked "no"
-        const yesNoValue = document.querySelector("input[name='yes_no']:checked");
-        if (yesNoValue && yesNoValue.value === "no") {
-          currentSectionIndex = 1;
-        } else {
-          currentSectionIndex--;
-        }
-      } else if (currentSectionIndex > 0) {
+      const yesNoValue = document.querySelector("input[name='yes_no']:checked");
+      if (yesNoValue && yesNoValue.value === "no") {
+        currentSectionIndex = 4; // Skip to client-satisfaction-form
+      } else {
+        currentSectionIndex++; // Move to citizen-charter-form
+      }
+    } else if (currentSectionIndex === 3) {
+      // Validate citizen-charter-form
+      if (!validateCitizenCharterForm()) {
+        return;
+      }
+      currentSectionIndex++; // Move to client-satisfaction-form
+    } else if (currentSectionIndex === 4) {
+      // Validate client-satisfaction-form
+      if (!validateClientSatisfactionForm()) {
+        return;
+      }
+      currentSectionIndex++; // End or submit
+    } else if (currentSectionIndex < sections.length - 1) {
+      currentSectionIndex++;
+    }
+  } else if (buttonType === "previous") {
+    if (currentSectionIndex === 4) {
+      const yesNoValue = document.querySelector("input[name='yes_no']:checked");
+      if (yesNoValue && yesNoValue.value === "no") {
+        currentSectionIndex = 2;
+      } else {
         currentSectionIndex--;
       }
+    } else if (currentSectionIndex > 0) {
+      currentSectionIndex--;
     }
-    showSection(currentSectionIndex);
   }
+
+  showSection(currentSectionIndex);
+}
 
   // Add event listeners to the next buttons
   document.querySelectorAll("button[value='next']").forEach((button) => {

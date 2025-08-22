@@ -734,6 +734,9 @@
   .underline {
     text-decoration-line: underline;
   }
+  .accent-emerald-600 {
+    accent-color: var(--color-emerald-600);
+  }
   .opacity-0 {
     opacity: 0%;
   }
@@ -880,6 +883,11 @@
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .disabled\:opacity-50 {
+    &:disabled {
+      opacity: 50%;
     }
   }
   .max-md\:top-20 {
