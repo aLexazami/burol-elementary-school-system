@@ -12,8 +12,6 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-
-include(__DIR__ . '/../../controllers/archive.php');
 ?>
 
 <!DOCTYPE html>
