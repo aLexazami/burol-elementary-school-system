@@ -44,7 +44,7 @@ require_once '../controllers/respondent-counts.php';
     <!-- Right Side Content -->
     <section class="bg-white p-2">
       <div class="p-2 grid grid-cols-3 gap-4 mt-6">
-        <div class="bg-gray-300 col-span-3  p-2">
+        <div class="bg-emerald-300 col-span-3  p-2">
           <h1 class="font-bold text-center text-lg">Respondents</h1>
         </div>
 
