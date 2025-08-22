@@ -29,17 +29,15 @@ include(__DIR__ . '/../../controllers/archive.php');
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
 
   <!-- Header Section -->
-  <header class=" shadow-md sticky-top-0 z-10 bg-white">
     <?php include('../../includes/header.php'); ?>
-  </header>
+
 
   <!-- Main Content Section -->
   <main>
     <section class="flex mt-2">
       <!-- Left Side Navigation Section -->
-      <div class=" bg-white p-2 mr-3 space-y-2 ">
           <?php include '../../includes/side-nav-admin.php'?>
-      </div>
+
       <!-- Right Side Context Section -->
       <div class="bg-white p-2 h-150">
         <select id="archive-year" onchange="loadArchive(this.value)">

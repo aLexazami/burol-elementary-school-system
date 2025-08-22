@@ -36,16 +36,13 @@ $annualCount = getRespondentCount('annual', $conn);
 <body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen flex flex-col">
 
   <!-- Header Section -->
-  <header class=" shadow-md sticky-top-0 z-10 bg-white">
     <?php include '../includes/header.php' ?>
-  </header>
 
   <!-- Main Content Section -->
   <main class=" grid grid-cols-[248px_1fr] gap-4 mt-2 m-2">
   <!-- Left Side Navigation -->
-  <aside class="bg-white p-2 space-y-2">
     <?php include '../includes/side-nav-admin.php' ?>
-  </aside>
+
 
   <!-- Right Side Content -->
   <section class="bg-white p-2">
@@ -58,21 +55,21 @@ $annualCount = getRespondentCount('annual', $conn);
       <div class="bg-white shadow-md rounded-lg p-4 text-center">
         <img src="/assets/icons/new.png" class="mx-auto h-6 w-6 mb-2">
         <p class="text-sm text-gray-500 uppercase">New</p>
-        <p class="text-2xl font-bold text-emerald-800"><?= $newCount ?></p>
+        <p class="text-2xl font-bold "><?= $newCount ?></p>
       </div>
 
       <!-- Weekly -->
       <div class="bg-white shadow-md rounded-lg p-4 text-center">
         <img src="/assets/icons/weekly.png" class="mx-auto h-6 w-6 mb-2">
         <p class="text-sm text-gray-500 uppercase">Weekly</p>
-        <p class="text-2xl font-bold text-emerald-800"><?= $weeklyCount ?></p>
+        <p class="text-2xl font-bold"><?= $weeklyCount ?></p>
       </div>
 
       <!-- Total -->
       <div class="bg-white shadow-md rounded-lg p-4 text-center">
         <img src="/assets/icons/total.png" class="mx-auto h-6 w-6 mb-2">
         <p class="text-sm text-gray-500 uppercase">Total</p>
-        <p class="text-2xl font-bold text-emerald-800"><?= $annualCount ?></p>
+        <p class="text-2xl font-bold "><?= $annualCount ?></p>
       </div>
     </div>
   </section>
