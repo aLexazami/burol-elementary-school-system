@@ -41,6 +41,11 @@ require_once '../../includes/fetch-feedback-data.php';
       <div class="bg-emerald-300 p-2">
         <h1 class="font-bold text-center text-lg">Submitted Feedback</h1>
       </div>
+      <a href="/pages/admin/feedback-details.php">
+        <button class="cursor-pointer  w-fit m-1 hover:bg-emerald-600 rounded-md p-1 absolute">
+          <img src="/assets/img/fullscreen.png" class="w-8 h-8">
+        </button>
+      </a>
       <br>
       <table id="feedbackTable" class=" w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2">
         <thead class=" bg-gray-300 text-left  text-black">
@@ -78,15 +83,17 @@ require_once '../../includes/fetch-feedback-data.php';
 
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#feedbackTable').DataTable({
-      pageLength: 10,
-      lengthChange: false,
-      order: [[0, 'desc']],
+  <script>
+    $(document).ready(function() {
+      $('#feedbackTable').DataTable({
+        pageLength: 10,
+        lengthChange: false,
+        order: [
+          [0, 'desc']
+        ],
+      });
     });
-  });
-</script>
+  </script>
 </body>
 
 </html>
