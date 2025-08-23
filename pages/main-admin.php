@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 require_once '../controllers/auth-check.php';
 require_once '../db-connection.php';
@@ -11,7 +10,6 @@ require_once '../controllers/respondent-counts.php';
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
