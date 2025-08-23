@@ -1,10 +1,9 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 require_once '../../db-connection.php';
-require_once '../../controllers/auth-check.php';
+
 require_once '../../includes/fetch-feedback-data.php';
 ?>
 
@@ -27,14 +26,9 @@ require_once '../../includes/fetch-feedback-data.php';
 
 <body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
 
-  <!-- Header Section -->
-  <?php include('../../includes/header.php'); ?>
-
 
   <!-- Feedback Respondents Main Content Section -->
   <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 min-h-screen">
-    <!-- Left Side Navigation Section -->
-    <?php include '../../includes/side-nav-admin.php' ?>
 
     <!-- Right Side Context Section -->
     <section class="bg-white p-2">
@@ -76,17 +70,6 @@ require_once '../../includes/fetch-feedback-data.php';
   <!--Footer Section-->
   <?php include '../../includes/footer.php' ?>
 
-  <script src="/assets/js/button.js"></script>
-  <script src="/assets/js/date-time.js"></script>
-<script>
-  $(document).ready(function () {
-    $('#feedbackTable').DataTable({
-      pageLength: 10,
-      lengthChange: false,
-      order: [[0, 'desc']],
-    });
-  });
-</script>
 </body>
 
 </html>

@@ -3,14 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Start session
-session_start();
-
-// Check if user is logged in
-if (!isset($_SESSION['username'])) {
-  header("Location: ../index.php");
-  exit();
-}
+require_once '../../controllers/auth-check.php';
 ?>
 
 <!DOCTYPE html>

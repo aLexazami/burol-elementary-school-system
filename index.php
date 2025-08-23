@@ -1,7 +1,7 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +53,6 @@ error_reporting(E_ALL);
         </div>
         <div class="error-message text-red-500 text-center">
           <?php
-          session_start();
           if (isset($_SESSION['error_message'])) {
             echo '<div class="error-alert">' . $_SESSION['error_message'] . '</div>';
             unset($_SESSION['error_message']);
