@@ -10,5 +10,5 @@ function updateCounts() {
 }
 
 // Refresh every 30 seconds
-setInterval(updateCounts, 30000);
+setInterval(updateCounts, 10000);
 updateCounts(); // initial load
