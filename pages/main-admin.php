@@ -31,13 +31,13 @@ require_once '../controllers/respondent-counts.php';
   <title>Admin Dashboard</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen flex flex-col">
+<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen">
 
   <!-- Header Section -->
   <?php include '../includes/header.php' ?>
 
   <!-- Admin Main Content Section -->
-  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 h-screen">
+  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 min-h-screen">
     <!-- Left Side Navigation -->
     <?php include '../includes/side-nav-admin.php' ?>
 
