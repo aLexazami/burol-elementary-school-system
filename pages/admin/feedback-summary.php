@@ -18,19 +18,19 @@ require_once '../../includes/functions.php';
   <title>Feedback Summary</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
+<body class="bg-gray-200  min-h-screen flex flex-col">
 
   <!-- Header Section -->
   <?php include('../../includes/header.php'); ?>
 
 
   <!-- Feedback Summary Main Content Section -->
-  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 m-h-screen">
+  <main class=" grid grid-cols-[248px_1fr]  m-h-screen">
     <!-- Left Side Navigation Section -->
     <?php include '../../includes/side-nav-admin.php' ?>
 
     <!-- Right Side Context Section -->
-    <section class="bg-gray-200 p-2">
+    <section class="m-4">
       <div class="bg-emerald-300 p-2 flex justify-center items-center gap-2">
         <img src="/assets/img/feedback-summary.png " class="w-5 h-5">
         <h1 class="font-bold text-lg ">Feedback Summary</h1>

@@ -17,19 +17,19 @@ require_once '../../controllers/auth-check.php';
   <title>Feedback Report</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
+<body class="bg-gray-200  min-h-screen flex flex-col">
 
   <!-- Header Section -->
     <?php include('../../includes/header.php'); ?>
 
 
   <!-- Feedback Respondents Main Content Section -->
-  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 h-screen">
+  <main class=" grid grid-cols-[248px_1fr] h-screen">
       <!-- Left Side Navigation Section -->
           <?php include '../../includes/side-nav-admin.php'?>
 
       <!-- Right Side Context Section -->
-      <section class="bg-white p-2">
+      <section class="m-4">
         <div class="p-2 grid grid-cols-3 gap-4 mt-6">
           <h1>This is Right Context for Feedback Report</h1>
         </div>

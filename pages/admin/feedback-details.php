@@ -27,14 +27,13 @@ require_once '../../includes/fetch-feedback-data.php';
   <title>Feedback Respondents Details</title>
 </head>
 
-<body class=" min-h-screen flex flex-col">
+<body class=" bg-gray-200 min-h-screen flex flex-col">
 
 
   <!-- Feedback Respondents Main Content Section -->
   <main >
-
     <!-- Right Side Context Section -->
-    <section class="bg-gray-200 mb-10">
+    <section class=" mb-10">
       <div class="bg-emerald-300 p-2 ">
         <h1 class="font-bold text-center text-lg">Submitted Feedback</h1>
       </div>
@@ -45,7 +44,7 @@ require_once '../../includes/fetch-feedback-data.php';
       </a>
       <br>
       <div class="overflow-auto  m-2">
-        <table id="feedbackTable" class=" w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2">
+        <table id="feedbackTable" class="bg-white w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2">
           <thead class=" bg-gray-300 text-left  text-black">
             <tr class=" shadow-lg sticky top-0 z-10">
               <th class="px-5 py-5 ">No.</th>

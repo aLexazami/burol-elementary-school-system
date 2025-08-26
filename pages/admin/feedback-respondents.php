@@ -25,19 +25,19 @@ require_once '../../includes/fetch-feedback-data.php';
   <title>Feedback Respondents</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800  min-h-screen flex flex-col">
+<body class="bg-gray-200  min-h-screen flex flex-col">
 
   <!-- Header Section -->
   <?php include('../../includes/header.php'); ?>
 
 
   <!-- Feedback Respondents Main Content Section -->
-  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 min-h-screen">
+  <main class=" grid grid-cols-[248px_1fr] min-h-screen">
     <!-- Left Side Navigation Section -->
     <?php include '../../includes/side-nav-admin.php' ?>
 
     <!-- Right Side Context Section -->
-    <section class="bg-gray-200 p-2">
+    <section class="m-4">
       <div class="bg-emerald-300 p-2">
         <h1 class="font-bold text-center text-lg">Submitted Feedback</h1>
       </div>
@@ -47,7 +47,7 @@ require_once '../../includes/fetch-feedback-data.php';
         </button>
       </a>
       <br>
-      <table id="feedbackTable" class=" w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2">
+      <table id="feedbackTable" class=" w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2 bg-white">
         <thead class=" bg-gray-300 text-left  text-black">
           <tr class=" shadow-lg ">
             <th class="px-5 py-5 ">No.</th>

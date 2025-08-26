@@ -1,4 +1,4 @@
-<aside class="bg-gray-200 p-2 space-y-2">
+<aside class="bg-gray-300 p-2 space-y-2">
   <?php
   $currentPage = basename($_SERVER['PHP_SELF']);
   ?>

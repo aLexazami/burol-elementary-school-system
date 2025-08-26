@@ -17,19 +17,19 @@ require_once '../controllers/respondent-counts.php';
   <title>Admin Dashboard</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 min-h-screen">
+<body class="bg-gray-200 min-h-screen">
 
   <!-- Header Section -->
   <?php include '../includes/header.php' ?>
 
   <!-- Admin Main Content Section -->
-  <main class=" grid grid-cols-[248px_1fr] gap-4 m-2 min-h-screen">
+  <main class=" grid grid-cols-[248px_1fr]  min-h-screen">
     <!-- Left Side Navigation -->
     <?php include '../includes/side-nav-admin.php' ?>
 
     <!-- Right Side Content -->
-    <section class="bg-gray-200 p-2">
-      <div class="p-2 grid grid-cols-3 gap-4 mt-6">
+    <section class="m-4">
+      <div class=" grid grid-cols-3 gap-4">
         <div class="bg-emerald-300 col-span-3  p-2">
           <h1 class="font-bold text-center text-lg">Respondents</h1>
         </div>
