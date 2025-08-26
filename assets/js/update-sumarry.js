@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', function () {
         safeUpdate('age-35-49', data['35-49'] || 0);
         safeUpdate('age-50-64', data['50-64'] || 0);
         safeUpdate('age-65-up', data['65-up'] || 0);
+
+        //Citizen Charter Awareness Counts
+        safeUpdate('awareness-yes', data.yes || 0);
+        safeUpdate('awareness-no', data.no || 0);
+
+
       })
       .catch(error => {
         console.error('Counts fetch failed:', error);

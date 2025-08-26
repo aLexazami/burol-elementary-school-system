@@ -1,6 +1,7 @@
 <?php
 
-function getRespondentCount($type, $pdo) {
+function getRespondentCount($type, $pdo)
+{
     switch ($type) {
         case 'new':
             $sql = "SELECT COUNT(*) FROM feedback_respondents WHERE DATE(submitted_at) = CURDATE()";
@@ -18,7 +19,8 @@ function getRespondentCount($type, $pdo) {
     return $pdo->query($sql)->fetchColumn();
 }
 
-function getCustomerTypeCounts($pdo) {
+function getCustomerTypeCounts($pdo)
+{
     $sql = "SELECT customer_type, COUNT(*) AS count FROM feedback_respondents GROUP BY customer_type";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -30,7 +32,8 @@ function getCustomerTypeCounts($pdo) {
     return $counts;
 }
 
-function getAgeGroupCounts($pdo) {
+function getAgeGroupCounts($pdo)
+{
     $sql = "
         SELECT
             CASE
@@ -63,4 +66,23 @@ function getAgeGroupCounts($pdo) {
     return $counts;
 }
 
-?>
+function getCharterAwarenessCounts($pdo)
+{
+    $sql = "SELECT citizen_charter_awareness, COUNT(*) AS count FROM feedback_answers GROUP BY citizen_charter_awareness";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+
+    $counts = [
+        'yes' => 0,
+        'no' => 0
+    ];
+
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+        $key = strtolower($row['citizen_charter_awareness']); // normalize to lowercase
+        if (isset($counts[$key])) {
+            $counts[$key] = $row['count'];
+        }
+    }
+
+    return $counts;
+}

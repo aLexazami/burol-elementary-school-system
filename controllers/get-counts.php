@@ -13,6 +13,11 @@ $response = [
 $customerCounts = getCustomerTypeCounts($pdo);
 $response = array_merge($response, $customerCounts);
 $response = array_merge($response, getAgeGroupCounts($pdo));
+$response = array_merge($response, getCharterAwarenessCounts($pdo));
+
+
+
+
 
 
 echo json_encode($response);

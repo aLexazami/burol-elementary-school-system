@@ -84,11 +84,11 @@ require_once '../../includes/functions.php';
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Yes:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="awareness-yes" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">No:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="awareness-no" class="text-red-400 font-bold text-right">0</span>
             </div>
           </div>
         </div>
@@ -97,15 +97,15 @@ require_once '../../includes/functions.php';
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">CC1:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="cc1-response" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">CC2:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="cc2-response" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">CC3:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="cc3-response" class="text-red-400 font-bold text-right">0</span>
             </div>
           </div>
         </div>
