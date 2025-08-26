@@ -37,7 +37,7 @@ require_once '../../includes/fetch-feedback-data.php';
     <?php include '../../includes/side-nav-admin.php' ?>
 
     <!-- Right Side Context Section -->
-    <section class="bg-white p-2">
+    <section class="bg-gray-200 p-2">
       <div class="bg-emerald-300 p-2">
         <h1 class="font-bold text-center text-lg">Submitted Feedback</h1>
       </div>
