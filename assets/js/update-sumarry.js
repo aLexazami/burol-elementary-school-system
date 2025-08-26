@@ -27,6 +27,24 @@ document.addEventListener('DOMContentLoaded', function () {
         safeUpdate('awareness-yes', data.yes || 0);
         safeUpdate('awareness-no', data.no || 0);
 
+        // CC1
+        safeUpdate('cc1-1', data['cc1-1'] || 0);
+        safeUpdate('cc1-2', data['cc1-2'] || 0);
+        safeUpdate('cc1-3', data['cc1-3'] || 0);
+        safeUpdate('cc1-4', data['cc1-4'] || 0);
+
+        // CC2
+        safeUpdate('cc2-1', data['cc2-1'] || 0);
+        safeUpdate('cc2-2', data['cc2-2'] || 0);
+        safeUpdate('cc2-3', data['cc2-3'] || 0);
+        safeUpdate('cc2-4', data['cc2-4'] || 0);
+        safeUpdate('cc2-5', data['cc2-5'] || 0);
+
+        // CC3
+        safeUpdate('cc3-1', data['cc3-1'] || 0);
+        safeUpdate('cc3-2', data['cc3-2'] || 0);
+        safeUpdate('cc3-3', data['cc3-3'] || 0);
+        safeUpdate('cc3-4', data['cc3-4'] || 0);
 
       })
       .catch(error => {

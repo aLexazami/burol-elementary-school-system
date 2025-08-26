@@ -86,3 +86,20 @@ function getCharterAwarenessCounts($pdo)
 
     return $counts;
 }
+
+function getCitizenCharterResponses($pdo) {
+    $response = [];
+
+    foreach (['cc1', 'cc2', 'cc3'] as $field) {
+        $sql = "SELECT $field, COUNT(*) AS count FROM feedback_answers WHERE $field IS NOT NULL GROUP BY $field";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $key = "{$field}-{$row[$field]}";
+            $response[$key] = $row['count'];
+        }
+    }
+
+    return $response;
+}

@@ -35,8 +35,8 @@ require_once '../../includes/functions.php';
         <img src="/assets/img/feedback-summary.png " class="w-5 h-5">
         <h1 class="font-bold text-lg ">Feedback Summary</h1>
       </div>
-      <div class="pt-2 grid grid-cols-4 gap-2">
-        <div class="p-4 shadow-lg col-span-2 bg-white rounded-lg">
+      <div class="pt-2 grid grid-cols-3 gap-2">
+        <div class="p-4 shadow-lg  bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Customer Type</h1>
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
@@ -50,11 +50,11 @@ require_once '../../includes/functions.php';
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Government:</span>
               <span id="count-government" class="text-red-400 font-bold text-right"><?= $counts['Government'] ?? 0 ?>
-</span>
+              </span>
             </div>
           </div>
         </div>
-        <div class="p-4 shadow-lg col-span-2 bg-white rounded-lg">
+        <div class="p-4 shadow-lg  bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Customer Age</h1>
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
@@ -79,7 +79,7 @@ require_once '../../includes/functions.php';
             </div>
           </div>
         </div>
-        <div class="p-4 shadow-lg col-span-2 bg-white rounded-lg">
+        <div class="p-4 shadow-lg  bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Citizen Charter Awareness</h1>
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
@@ -92,24 +92,84 @@ require_once '../../includes/functions.php';
             </div>
           </div>
         </div>
-        <div class="p-4 shadow-lg col-span-2 bg-white rounded-lg">
+        <div class="p-4 shadow-lg col-span-3 bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Citizen Charter Awareness Response</h1>
-          <div class="mt-10 divide-y divide-gray-200">
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">CC1:</span>
-              <span id="cc1-response" class="text-red-400 font-bold text-right">0</span>
+          <div class="grid grid-cols-3 gap-x-5 mt-10">
+            <div class=" divide-y divide-gray-200">
+              <!-- CC1 Breakdown -->
+              <div class="text-center font-bold pb-3">
+                <h1>CC1</h1>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">1. Fully aware and saw:</span>
+                <span id="cc1-1" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">2. Aware but didn’t see:</span>
+                <span id="cc1-2" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">3. Learned only by seeing:</span>
+                <span id="cc1-3" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">4. Not aware at all:</span>
+                <span id="cc1-4" class="text-red-400 font-bold text-right">0</span>
+              </div>
             </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">CC2:</span>
-              <span id="cc2-response" class="text-red-400 font-bold text-right">0</span>
+
+            <div class=" divide-y divide-gray-200">
+              <!-- CC2 Breakdown -->
+               <div class="text-center font-bold pb-3">
+                <h1>CC2</h1>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">1. Easy to see:</span>
+                <span id="cc2-1" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">2. Somewhat easy:</span>
+                <span id="cc2-2" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">3. Difficult to see:</span>
+                <span id="cc2-3" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">4. Not visible:</span>
+                <span id="cc2-4" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">5. N/A:</span>
+                <span id="cc2-5" class="text-red-400 font-bold text-right">0</span>
+              </div>
             </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">CC3:</span>
-              <span id="cc3-response" class="text-red-400 font-bold text-right">0</span>
+
+            <div class=" divide-y divide-gray-200">
+              <!-- CC3 Breakdown -->
+               <div class="text-center font-bold pb-3">
+                <h1>CC3</h1>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">1. Helped very much:</span>
+                <span id="cc3-1" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">2. Somewhat helped:</span>
+                <span id="cc3-2" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">3. Did not help:</span>
+                <span id="cc3-3" class="text-red-400 font-bold text-right">0</span>
+              </div>
+              <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
+                <span class="font-medium">4. N/A:</span>
+                <span id="cc3-4" class="text-red-400 font-bold text-right">0</span>
+              </div>
             </div>
           </div>
         </div>
-        <div class=" p-4 shadow-lg col-span-4 bg-white rounded-lg">
+        <div class=" p-4 shadow-lg col-span-3 bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Client Satisfactory Response</h1>
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
@@ -146,7 +206,7 @@ require_once '../../includes/functions.php';
             </div>
           </div>
         </div>
-        <div class="col-span-4 p-4 shadow-lg bg-white rounded-lg">
+        <div class="col-span-3 p-4 shadow-lg bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Service Availed</h1>
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
