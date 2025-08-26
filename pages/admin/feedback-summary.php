@@ -97,8 +97,20 @@ require_once '../../includes/functions.php';
           <div class="grid grid-cols-3 gap-x-5 mt-10">
             <div class=" divide-y divide-gray-200">
               <!-- CC1 Breakdown -->
-              <div class="text-center font-bold pb-3">
-                <h1>CC1</h1>
+              <!-- CC1 Header with Toggle -->
+              <div class="text-center font-bold pb-3 cursor-pointer" onclick="toggleLegend('cc1-legend')">
+                <h1 class="text-emerald-800 hover:underline">CC1</h1>
+              </div>
+
+              <!-- Hidden Legend -->
+              <div id="cc1-legend" class="bg-gray-100 p-3 rounded-lg text-sm text-left hidden">
+                <p><strong>CC1: Which of the following best describes your awareness of a Citizen’s Charter?</strong></p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li><strong>1</strong> – I know what a Citizen’s Charter is and I saw this office’s Citizen’s Charter.</li>
+                  <li><strong>2</strong> – I know what a Citizen’s Charter is but I did not see this office’s Citizen’s Charter.</li>
+                  <li><strong>3</strong> – I learned of the Citizen’s Charter only when I saw this office’s Citizen’s Charter.</li>
+                  <li><strong>4</strong> – I do not know what a Citizen’s Charter is and I did not see one in this office.</li>
+                </ul>
               </div>
               <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
                 <span class="font-medium">1. Fully aware and saw:</span>
@@ -120,8 +132,21 @@ require_once '../../includes/functions.php';
 
             <div class=" divide-y divide-gray-200">
               <!-- CC2 Breakdown -->
-               <div class="text-center font-bold pb-3">
-                <h1>CC2</h1>
+              <!-- CC2 Header with Toggle -->
+              <div class="text-center font-bold pb-3 cursor-pointer" onclick="toggleLegend('cc2-legend')">
+                <h1 class="text-emerald-800 hover:underline">CC2</h1>
+              </div>
+
+              <!-- CC2 Legend -->
+              <div id="cc2-legend" class="bg-gray-100 p-3 rounded-lg text-sm text-left hidden">
+                <p><strong>CC2: If aware of Citizen’s Charter (answered 1-3 in CC1), would you say that the CC of this office was …?</strong></p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li><strong>1</strong> – Easy to see</li>
+                  <li><strong>2</strong> – Somewhat easy to see</li>
+                  <li><strong>3</strong> – Difficult to see</li>
+                  <li><strong>4</strong> – Not visible at all</li>
+                  <li><strong>5</strong> – N/A</li>
+                </ul>
               </div>
               <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
                 <span class="font-medium">1. Easy to see:</span>
@@ -144,11 +169,22 @@ require_once '../../includes/functions.php';
                 <span id="cc2-5" class="text-red-400 font-bold text-right">0</span>
               </div>
             </div>
-
             <div class=" divide-y divide-gray-200">
               <!-- CC3 Breakdown -->
-               <div class="text-center font-bold pb-3">
-                <h1>CC3</h1>
+              <!-- CC3 Header with Toggle -->
+              <div class="text-center font-bold pb-3 cursor-pointer" onclick="toggleLegend('cc3-legend')">
+                <h1 class="text-emerald-800 hover:underline">CC3</h1>
+              </div>
+
+              <!-- CC3 Legend -->
+              <div id="cc3-legend" class="bg-gray-100 p-3 rounded-lg text-sm text-left hidden">
+                <p><strong>CC3: If aware of Citizen’s Charter (answered 1-3 in CC1), how much did the CC help you in your transaction?</strong></p>
+                <ul class="list-disc pl-5 mt-2 space-y-1">
+                  <li><strong>1</strong> – Helped very much</li>
+                  <li><strong>2</strong> – Somewhat helped</li>
+                  <li><strong>3</strong> – Did not help</li>
+                  <li><strong>4</strong> – N/A</li>
+                </ul>
               </div>
               <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
                 <span class="font-medium">1. Helped very much:</span>
@@ -362,6 +398,14 @@ require_once '../../includes/functions.php';
   <!--Footer Section-->
   <?php include '../../includes/footer.php' ?>
 
+  <script>
+    function toggleLegend(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.toggle('hidden');
+      }
+    }
+  </script>
   <script src="/assets/js/update-sumarry.js"></script>
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>

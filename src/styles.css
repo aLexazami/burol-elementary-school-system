@@ -313,6 +313,9 @@
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -501,6 +504,9 @@
   .resize-none {
     resize: none;
   }
+  .list-disc {
+    list-style-type: disc;
+  }
   .grid-flow-dense {
     grid-auto-flow: dense;
   }
@@ -563,6 +569,13 @@
   }
   .gap-5 {
     gap: calc(var(--spacing) * 5);
+  }
+  .space-y-1 {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing) * 1) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-y-reverse)));
+    }
   }
   .space-y-2 {
     :where(& > :not(:last-child)) {
