@@ -103,3 +103,20 @@ function getCitizenCharterResponses($pdo) {
 
     return $response;
 }
+
+function getSQDMatrixCounts($pdo) {
+    $sqdItems = ['sqd1', 'sqd2', 'sqd3', 'sqd4', 'sqd5', 'sqd6', 'sqd7', 'sqd8'];
+    $ratings = ['5', '4', '3', '2', '1', 'na'];
+    $counts = [];
+
+    foreach ($sqdItems as $sqd) {
+        foreach ($ratings as $rating) {
+            $sql = "SELECT COUNT(*) FROM feedback_answers WHERE $sqd = :rating";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(['rating' => $rating]);
+            $counts["{$sqd}-{$rating}"] = $stmt->fetchColumn();
+        }
+    }
+
+    return $counts;
+}

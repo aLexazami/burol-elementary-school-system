@@ -15,6 +15,7 @@ $response = array_merge($response, $customerCounts);
 $response = array_merge($response, getAgeGroupCounts($pdo));
 $response = array_merge($response, getCharterAwarenessCounts($pdo));
 $response = array_merge($response, getCitizenCharterResponses($pdo));
+$response = array_merge($response, getSQDMatrixCounts($pdo));
 
 echo json_encode($response);
 ?>

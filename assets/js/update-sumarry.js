@@ -46,6 +46,71 @@ document.addEventListener('DOMContentLoaded', function () {
         safeUpdate('cc3-3', data['cc3-3'] || 0);
         safeUpdate('cc3-4', data['cc3-4'] || 0);
 
+        // SQD1
+        safeUpdate('sqd1-5', data['sqd1-5'] || 0);
+        safeUpdate('sqd1-4', data['sqd1-4'] || 0);
+        safeUpdate('sqd1-3', data['sqd1-3'] || 0);
+        safeUpdate('sqd1-2', data['sqd1-2'] || 0);
+        safeUpdate('sqd1-1', data['sqd1-1'] || 0);
+        safeUpdate('sqd1-na', data['sqd1-na'] || 0);
+
+        // SQD2
+        safeUpdate('sqd2-5', data['sqd2-5'] || 0);
+        safeUpdate('sqd2-4', data['sqd2-4'] || 0);
+        safeUpdate('sqd2-3', data['sqd2-3'] || 0);
+        safeUpdate('sqd2-2', data['sqd2-2'] || 0);
+        safeUpdate('sqd2-1', data['sqd2-1'] || 0);
+        safeUpdate('sqd2-na', data['sqd2-na'] || 0);
+
+        // SQD3
+        safeUpdate('sqd3-5', data['sqd3-5'] || 0);
+        safeUpdate('sqd3-4', data['sqd3-4'] || 0);
+        safeUpdate('sqd3-3', data['sqd3-3'] || 0);
+        safeUpdate('sqd3-2', data['sqd3-2'] || 0);
+        safeUpdate('sqd3-1', data['sqd3-1'] || 0);
+        safeUpdate('sqd3-na', data['sqd3-na'] || 0);
+
+        // SQD4
+        safeUpdate('sqd4-5', data['sqd4-5'] || 0);
+        safeUpdate('sqd4-4', data['sqd4-4'] || 0);
+        safeUpdate('sqd4-3', data['sqd4-3'] || 0);
+        safeUpdate('sqd4-2', data['sqd4-2'] || 0);
+        safeUpdate('sqd4-1', data['sqd4-1'] || 0);
+        safeUpdate('sqd4-na', data['sqd4-na'] || 0);
+
+        // SQD5
+        safeUpdate('sqd5-5', data['sqd5-5'] || 0);
+        safeUpdate('sqd5-4', data['sqd5-4'] || 0);
+        safeUpdate('sqd5-3', data['sqd5-3'] || 0);
+        safeUpdate('sqd5-2', data['sqd5-2'] || 0);
+        safeUpdate('sqd5-1', data['sqd5-1'] || 0);
+        safeUpdate('sqd5-na', data['sqd5-na'] || 0);
+
+        // SQD6
+        safeUpdate('sqd6-5', data['sqd6-5'] || 0);
+        safeUpdate('sqd6-4', data['sqd6-4'] || 0);
+        safeUpdate('sqd6-3', data['sqd6-3'] || 0);
+        safeUpdate('sqd6-2', data['sqd6-2'] || 0);
+        safeUpdate('sqd6-1', data['sqd6-1'] || 0);
+        safeUpdate('sqd6-na', data['sqd6-na'] || 0);
+
+        // SQD7
+        safeUpdate('sqd7-5', data['sqd7-5'] || 0);
+        safeUpdate('sqd7-4', data['sqd7-4'] || 0);
+        safeUpdate('sqd7-3', data['sqd7-3'] || 0);
+        safeUpdate('sqd7-2', data['sqd7-2'] || 0);
+        safeUpdate('sqd7-1', data['sqd7-1'] || 0);
+        safeUpdate('sqd7-na', data['sqd7-na'] || 0);
+
+        // SQD8
+        safeUpdate('sqd8-5', data['sqd8-5'] || 0);
+        safeUpdate('sqd8-4', data['sqd8-4'] || 0);
+        safeUpdate('sqd8-3', data['sqd8-3'] || 0);
+        safeUpdate('sqd8-2', data['sqd8-2'] || 0);
+        safeUpdate('sqd8-1', data['sqd8-1'] || 0);
+        safeUpdate('sqd8-na', data['sqd8-na'] || 0);
+
+
       })
       .catch(error => {
         console.error('Counts fetch failed:', error);

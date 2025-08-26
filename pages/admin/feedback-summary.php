@@ -206,11 +206,97 @@ require_once '../../includes/functions.php';
           </div>
         </div>
         <div class=" p-4 shadow-lg col-span-3 bg-white rounded-lg">
-          <h1 class="text-lg text-center text-emerald-800 font-bold">Client Satisfactory Response</h1>
+          <h1 class="text-lg text-center text-emerald-800 font-bold">Client Satisfaction Matrix</h1>
           <div class="mt-10 divide-y divide-gray-200">
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD1:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+            <div class="overflow-x-auto bg-white rounded-lg shadow-lg p-4">
+              <table class="min-w-full table-auto border-collapse text-sm">
+                <thead class="bg-emerald-100 text-emerald-800">
+                  <tr>
+                    <th class="px-4 py-2 text-left">SQD Item</th>
+                    <th class="px-4 py-2 text-center">5</th>
+                    <th class="px-4 py-2 text-center">4</th>
+                    <th class="px-4 py-2 text-center">3</th>
+                    <th class="px-4 py-2 text-center">2</th>
+                    <th class="px-4 py-2 text-center">1</th>
+                    <th class="px-4 py-2 text-center">N/A</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <!-- Repeat this row for each SQD item -->
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD1 – Responsiveness</td>
+                    <td id="sqd1-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd1-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd1-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd1-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd1-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd1-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD2 – Reliability</td>
+                    <td id="sqd2-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd2-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd2-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd2-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd2-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd2-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD3 – Access and Facilities</td>
+                    <td id="sqd3-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd3-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd3-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd3-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd3-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd3-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD4 – Communication</td>
+                    <td id="sqd4-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd4-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd4-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd4-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd4-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd4-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD5 – Costs</td>
+                    <td id="sqd5-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd5-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd5-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd5-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd5-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd5-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD6 – Integrity</td>
+                    <td id="sqd6-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd6-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd6-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd6-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd6-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd6-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD7 – Assurance</td>
+                    <td id="sqd7-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd7-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd7-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd7-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd7-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd7-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 font-medium">SQD8 – Outcome</td>
+                    <td id="sqd8-5" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd8-4" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd8-3" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd8-2" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd8-1" class="text-center text-red-500 font-bold">0</td>
+                    <td id="sqd8-na" class="text-center text-red-500 font-bold">0</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">SQD2:</span>
