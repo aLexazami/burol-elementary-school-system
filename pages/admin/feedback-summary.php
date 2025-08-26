@@ -1,9 +1,11 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
+
 
 require_once '../../controllers/auth-check.php';
+require_once '../../db-connection.php';
+require_once '../../includes/functions.php';
 ?>
 
 <!DOCTYPE html>
@@ -39,15 +41,16 @@ require_once '../../controllers/auth-check.php';
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Business:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="count-business" class="text-red-400 font-bold text-right"><?= $counts['Business'] ?? 0 ?></span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Citizen:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="count-citizen" class="text-red-400 font-bold text-right"><?= $counts['Citizen'] ?? 0 ?></span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Government:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="count-government" class="text-red-400 font-bold text-right"><?= $counts['Government'] ?? 0 ?>
+</span>
             </div>
           </div>
         </div>
@@ -299,6 +302,7 @@ require_once '../../controllers/auth-check.php';
   <!--Footer Section-->
   <?php include '../../includes/footer.php' ?>
 
+  <script src="/assets/js/update-sumarry.js"></script>
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>
 </body>

@@ -1,6 +1,6 @@
 <?php
-require_once 'functions.php'; // if not already included
-global $pdo;
+require_once '../includes/functions.php';
+require_once '../db-connection.php';
 
 $newCount = getRespondentCount('new', $pdo);
 $weeklyCount = getRespondentCount('weekly', $pdo);

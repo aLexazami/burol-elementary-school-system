@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 
 require_once '../controllers/auth-check.php';
 require_once '../db-connection.php';
-require_once '../controllers/functions.php';
+require_once '../includes/functions.php';
 require_once '../controllers/respondent-counts.php';
 ?>
 
@@ -61,7 +61,7 @@ require_once '../controllers/respondent-counts.php';
   <!--Footer Section-->
   <?php include '../includes/footer.php' ?>
 
-  <script src="../assets/js/update-respondent-counts.js"></script>
+  <script src="../assets/js/update-dashboard.js"></script>
   <script src="../assets/js/button.js"></script>
   <script src="../assets/js/date-time.js"></script>
 </body>
