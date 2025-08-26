@@ -109,14 +109,56 @@ document.addEventListener('DOMContentLoaded', function () {
         safeUpdate('sqd8-2', data['sqd8-2'] || 0);
         safeUpdate('sqd8-1', data['sqd8-1'] || 0);
         safeUpdate('sqd8-na', data['sqd8-na'] || 0);
-
-
+        
+        //Service Availed
+        safeUpdate('service-1', data['service-1'] || 0);
+        safeUpdate('service-2', data['service-2'] || 0);
+        safeUpdate('service-3', data['service-3'] || 0);
+        safeUpdate('service-4', data['service-4'] || 0);
+        safeUpdate('service-5', data['service-5'] || 0);
+        safeUpdate('service-6', data['service-6'] || 0);
+        safeUpdate('service-7', data['service-7'] || 0);
+        safeUpdate('service-8', data['service-8'] || 0);
+        safeUpdate('service-9', data['service-9'] || 0);
+        safeUpdate('service-10', data['service-10'] || 0);
+        safeUpdate('service-11', data['service-11'] || 0);
+        safeUpdate('service-12', data['service-12'] || 0);
+        safeUpdate('service-13', data['service-13'] || 0);
+        safeUpdate('service-14', data['service-14'] || 0);
+        safeUpdate('service-15', data['service-15'] || 0);
+        safeUpdate('service-16', data['service-16'] || 0);
+        safeUpdate('service-17', data['service-17'] || 0);
+        safeUpdate('service-18', data['service-18'] || 0);
+        
       })
       .catch(error => {
         console.error('Counts fetch failed:', error);
       });
   }
 
-  updateCounts(); // initial load
-  setInterval(updateCounts, 10000); // refresh every 10 seconds
+  function updateServiceCounts() {
+    fetch('/controllers/get-services-counts.php')
+      .then(response => response.json())
+      .then(data => {
+        Object.entries(data).forEach(([key, value]) => {
+          safeUpdate(key, value);
+        });
+      })
+      .catch(error => {
+        console.error('Failed to load service counts:', error);
+      });
+  }
+
+
+  // Initial loads
+  updateCounts();
+  updateServiceCounts();
+
+
+  // Periodic refresh
+  setInterval(() => {
+    updateCounts();
+    updateServiceCounts();
+  }, 10000);
+
 });

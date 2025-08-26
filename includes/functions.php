@@ -120,3 +120,10 @@ function getSQDMatrixCounts($pdo) {
 
     return $counts;
 }
+
+function getServicesByCustomerType($pdo, $type) {
+    $sql = "SELECT id, name FROM services WHERE customer_type = :type ORDER BY name ASC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['type' => $type]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

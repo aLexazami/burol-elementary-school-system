@@ -302,75 +302,75 @@ require_once '../../includes/functions.php';
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Acceptance of Employment Application for Teacher I Position (Walk-in):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-4" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">Acceptance of Employment Application for Teacher I Position (Online) CC3:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span class="font-medium">Acceptance of Employment Application for Teacher I Position (Online):</span>
+              <span id="service-5" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Borrowing of Learning Materials from the School Library/Learning Resource Center:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-6" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Distribution of Printed Self Learning Modules in Distance Learning Modality:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-7" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Enrollment (Walk-in):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-2" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Enrollment (Online):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-1" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Issuance of Requested Documents in Certified True Copy (CTC) and Photocopy (Walk-in):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-8" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Issuance of Requested Documents in Certified True Copy (CTC) and Photocopy (Online):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-9" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Issuance of School Clearance for different purposes:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-10" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Issuance of School Forms, Certifications, and other School Permanent Records:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-11" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Public Assistance (walk-in/phone call):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-12" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Public Assistance (email/social media):</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-13" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Laboratory and School Inventory:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-14" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">School Learning and Development:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-15" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Receiving and releasing of communications and other documents:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-16" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Request for Personnel Records for Teaching/Non-Teaching Personnel:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-18" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Reservation Process for the Use of School Facilities:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-17" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">Issuance of Special Order for Service Credits and Certification of Compensatory Time Credits:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="service-3" class="text-red-400 font-bold text-right">0</span>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
     $age = $_POST['age'] ?? null;
     $sex = $_POST['sex'] ?? null;
     $customer_type = $_POST['customer_type'] ?? null;
-    $service_availed = $_POST['service_availed'] ?? null;
+    $service_availed_id = $_POST['service_availed'] ?? null;
     $region = $_POST['region'] ?? null;
 
     // Citizen Charter Awareness
@@ -44,18 +44,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
 
     // Insert into feedback_respondents
     $stmt1 = $pdo->prepare("
-      INSERT INTO feedback_respondents (name, date, age, sex, customer_type, service_availed, region)
-      VALUES (:name, :date, :age, :sex, :customer_type, :service_availed, :region)
-    ");
-    $stmt1->execute([
-      'name' => $name,
-      'date' => $date,
-      'age' => $age,
-      'sex' => $sex,
-      'customer_type' => $customer_type,
-      'service_availed' => $service_availed,
-      'region' => $region
-    ]);
+  INSERT INTO feedback_respondents (name, date, age, sex, customer_type, service_availed_id, region)
+  VALUES (:name, :date, :age, :sex, :customer_type, :service_availed_id, :region)
+");
+
+$stmt1->execute([
+  'name' => $name,
+  'date' => $date,
+  'age' => $age,
+  'sex' => $sex,
+  'customer_type' => $customer_type,
+  'service_availed_id' => $service_availed_id,
+  'region' => $region
+]);
 
     $respondent_id = $pdo->lastInsertId();
 

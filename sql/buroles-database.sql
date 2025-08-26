@@ -5,16 +5,23 @@ CREATE DATABASE IF NOT EXISTS buroles_database;
 
 USE buroles_database;
 
-CREATE TABLE IF NOT EXISTS feedback_respondents (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NULL,
-    date DATE NOT NULL,
-    age VARCHAR(50) NOT NULL,
-    sex VARCHAR(10) NOT NULL,
-    customer_type VARCHAR(50) NOT NULL,
-    service_availed VARCHAR(255) NOT NULL,
-    region VARCHAR(255) NOT NULL,
-    submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+CREATE TABLE feedback_respondents (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NULL,
+  date DATE NOT NULL,
+  age VARCHAR(50) NOT NULL,
+  sex VARCHAR(10) NOT NULL,
+  customer_type VARCHAR(50) NOT NULL,
+  service_availed_id INT NOT NULL,
+  region VARCHAR(255) NOT NULL,
+  submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (service_availed_id) REFERENCES services(id)
+);
+
+CREATE TABLE services (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  customer_type ENUM('Citizen', 'Government', 'Business') NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS feedback_answers (
