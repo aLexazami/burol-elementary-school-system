@@ -59,23 +59,23 @@ require_once '../../includes/functions.php';
           <div class="mt-10 divide-y divide-gray-200">
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">19 - Under:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="age-under-19" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">20 - 34:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="age-20-34" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">35 - 49:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="age-35-49" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">50 - 64:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="age-50-64" class="text-red-400 font-bold text-right">0</span>
             </div>
             <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
               <span class="font-medium">65 - Higher:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
+              <span id="age-65-up" class="text-red-400 font-bold text-right">0</span>
             </div>
           </div>
         </div>
