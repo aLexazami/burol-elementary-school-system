@@ -207,22 +207,20 @@ require_once '../../includes/functions.php';
         </div>
         <div class=" p-4 shadow-lg col-span-3 bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Client Satisfaction Matrix</h1>
-          <div class="mt-10 divide-y divide-gray-200">
             <div class="overflow-x-auto bg-white rounded-lg shadow-lg p-4">
               <table class="min-w-full table-auto border-collapse text-sm">
                 <thead class="bg-emerald-100 text-emerald-800">
                   <tr>
                     <th class="px-4 py-2 text-left">SQD Item</th>
-                    <th class="px-4 py-2 text-center">5</th>
-                    <th class="px-4 py-2 text-center">4</th>
-                    <th class="px-4 py-2 text-center">3</th>
-                    <th class="px-4 py-2 text-center">2</th>
-                    <th class="px-4 py-2 text-center">1</th>
+                    <th class="px-4 py-2 text-center">5<br> ( Strongly Agree )</th>
+                    <th class="px-4 py-2 text-center">4<br> ( Agree )</th>
+                    <th class="px-4 py-2 text-center">3<br> ( Neither Agree or Disagree )</th>
+                    <th class="px-4 py-2 text-center">2<br> ( Disagree )</th>
+                    <th class="px-4 py-2 text-center">1<br> ( Strongly Disagree )</th>
                     <th class="px-4 py-2 text-center">N/A</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-200">
-                  <!-- Repeat this row for each SQD item -->
                   <tr>
                     <td class="px-4 py-2 font-medium">SQD1 – Responsiveness</td>
                     <td id="sqd1-5" class="text-center text-red-500 font-bold">0</td>
@@ -298,35 +296,6 @@ require_once '../../includes/functions.php';
                 </tbody>
               </table>
             </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD2:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD3:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD4:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD5:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD6:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD7:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-            <div class="grid grid-cols-2 py-2 hover:bg-gray-100">
-              <span class="font-medium">SQD8:</span>
-              <span class="text-red-400 font-bold text-right">0</span>
-            </div>
-          </div>
         </div>
         <div class="col-span-3 p-4 shadow-lg bg-white rounded-lg">
           <h1 class="text-lg text-center text-emerald-800 font-bold">Service Availed</h1>
