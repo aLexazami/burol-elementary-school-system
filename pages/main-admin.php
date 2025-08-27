@@ -2,10 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once '../controllers/auth-check.php';
-require_once '../db-connection.php';
 require_once '../includes/functions.php';
 require_once '../controllers/respondent-counts.php';
+require_once __DIR__ . '/../config/database.php';
+require_once __DIR__ . '/../auth/session.php';
+
 ?>
 
 <!DOCTYPE html>

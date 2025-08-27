@@ -1,7 +1,12 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-session_start();
+
+
+require_once __DIR__ . '/includes/bootstrap.php';
+require_once __DIR__ . '/config/database.php';
+require_once __DIR__ . '/auth/session.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +21,7 @@ session_start();
 
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
   <!-- Header Section -->
-  <header class=" bg-emerald-950 shadow-md sticky-top-0 z-10 p-1">
+  <header class="bg-emerald-950 shadow-md sticky top-0 z-10 p-1">
     <section class="max-w-4xl mx-auto flex justify-between items-center">
       <div class="flex items-center ">
         <img src="./assets/img/bes-logo1.png" alt="Burol Elementary School Logo" class="h-20 border rounded-full bg-white">
@@ -51,16 +56,18 @@ session_start();
           <img src="./assets/img/password.png" class="h-5 mr-1">
           <input type="password" id="password" name="password" class="h-12 w-80 p-2  border-l-2 focus:outline-none" placeholder="Password" required>
         </div>
-        <div class="error-message text-red-500 text-center">
-          <?php
-          if (isset($_SESSION['error_message'])) {
-            echo '<div class="error-alert">' . $_SESSION['error_message'] . '</div>';
-            unset($_SESSION['error_message']);
-          }
-          ?>
-        </div>
+        <?php if (isset($_SESSION['error_message'])): ?>
+          <div class="error-message text-red-500 text-center">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded">
+              <?= $_SESSION['error_message']; ?>
+            </div>
+          </div>
+          <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
         <div class="flex justify-center items-center my-5 w-90 m-auto border border-black rounded-lg ">
-          <p>Login-attempt:<span class="text-red-700 pl-1">0</span></p>
+          <p>Login-attempt:<span class="text-red-700 pl-1">
+              <?php echo isset($_SESSION['login_attempts']) ? $_SESSION['login_attempts'] : 0; ?>
+            </span></p>
         </div>
         <div class="text-center">
           <button type="submit" class="w-55 bg-emerald-800 text-white p-2 rounded hover:bg-emerald-600">
