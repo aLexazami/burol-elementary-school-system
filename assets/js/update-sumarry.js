@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(response => response.json())
     .then(data => {
       Object.entries(data).forEach(([slug, count]) => {
-        safeUpdate(slug, count); // assumes your HTML IDs match region slugs
+        safeUpdate(slug, count);
       });
     })
     .catch(error => {
