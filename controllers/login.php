@@ -40,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['login_attempts'] = 0;
 
             // Set session variables
+            $_SESSION['login_attempts'] = 0; // ✅ Reset on successful login
             $_SESSION['user_token'] = hash('sha256', $_ENV['SESSION_SECRET']);
             $_SESSION['username']   = $user['username'];
             $_SESSION['firstName']  = $user['first_name'];
