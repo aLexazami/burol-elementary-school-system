@@ -13,8 +13,9 @@ CREATE TABLE feedback_respondents (
   sex VARCHAR(10) NOT NULL,
   customer_type VARCHAR(50) NOT NULL,
   service_availed_id INT NOT NULL,
-  region VARCHAR(255) NOT NULL,
+  region_id INT NOT NULL,
   submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (region_id) REFERENCES regions(id),
   FOREIGN KEY (service_availed_id) REFERENCES services(id)
 );
 
@@ -22,6 +23,12 @@ CREATE TABLE services (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   customer_type ENUM('Citizen', 'Government', 'Business') NOT NULL
+);
+
+CREATE TABLE regions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  code VARCHAR(50) NOT NULL UNIQUE, -- e.g., 'Region I'
+  name VARCHAR(255) NOT NULL        -- e.g., 'Ilocos Region'
 );
 
 CREATE TABLE IF NOT EXISTS feedback_answers (

@@ -4,7 +4,7 @@ ini_set('display_errors', 1);
 session_start();
 
 // Include PDO connection
-require_once '../db-connection.php';
+require_once __DIR__ . '/../config/database.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
   try {
@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
     $sex = $_POST['sex'] ?? null;
     $customer_type = $_POST['customer_type'] ?? null;
     $service_availed_id = $_POST['service_availed'] ?? null;
-    $region = $_POST['region'] ?? null;
+    $region_id = $_POST['region'] ?? null;
 
     // Citizen Charter Awareness
     $citizenCharterAwareness = $_POST['yes_no'] ?? null;
@@ -44,32 +44,29 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['submit'])) {
 
     // Insert into feedback_respondents
     $stmt1 = $pdo->prepare("
-  INSERT INTO feedback_respondents (name, date, age, sex, customer_type, service_availed_id, region)
-  VALUES (:name, :date, :age, :sex, :customer_type, :service_availed_id, :region)
-");
+      INSERT INTO feedback_respondents (name, date, age, sex, customer_type, service_availed_id, region_id)
+      VALUES (:name, :date, :age, :sex, :customer_type, :service_availed_id, :region_id)");
 
-$stmt1->execute([
-  'name' => $name,
-  'date' => $date,
-  'age' => $age,
-  'sex' => $sex,
-  'customer_type' => $customer_type,
-  'service_availed_id' => $service_availed_id,
-  'region' => $region
-]);
+    $stmt1->execute([
+      'name' => $name,
+      'date' => $date,
+      'age' => $age,
+      'sex' => $sex,
+      'customer_type' => $customer_type,
+      'service_availed_id' => $service_availed_id,
+      'region_id' => $region_id
+    ]);
+
 
     $respondent_id = $pdo->lastInsertId();
 
     // Insert into feedback_answers
     $stmt2 = $pdo->prepare("
       INSERT INTO feedback_answers (
-        respondent_id, citizen_charter_awareness, cc1, cc2, cc3,
-        sqd1, sqd2, sqd3, sqd4, sqd5, sqd6, sqd7, sqd8, remarks
-      ) VALUES (
-        :respondent_id, :citizen_charter_awareness, :cc1, :cc2, :cc3,
-        :sqd1, :sqd2, :sqd3, :sqd4, :sqd5, :sqd6, :sqd7, :sqd8, :remarks
-      )
+        respondent_id, citizen_charter_awareness, cc1, cc2, cc3,sqd1, sqd2, sqd3, sqd4, sqd5, sqd6, sqd7, sqd8, remarks)
+        VALUES (:respondent_id, :citizen_charter_awareness, :cc1, :cc2, :cc3,:sqd1, :sqd2, :sqd3, :sqd4, :sqd5, :sqd6, :sqd7, :sqd8, :remarks)
     ");
+
     $stmt2->execute([
       'respondent_id' => $respondent_id,
       'citizen_charter_awareness' => $citizenCharterAwareness,
@@ -90,7 +87,6 @@ $stmt1->execute([
     // Redirect on success
     header("Location: thank-you.php");
     exit;
-
   } catch (PDOException $e) {
     error_log($e->getMessage());
     die("Something went wrong. Please try again later.");
