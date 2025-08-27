@@ -22,8 +22,18 @@ CREATE TABLE feedback_respondents (
 CREATE TABLE services (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  customer_type ENUM('Citizen', 'Government', 'Business') NOT NULL
+  customer_type ENUM('Citizen', 'Government', 'Business') NOT NULL,
+  category_id INT NOT NULL,
+  ADD FOREIGN KEY (category_id) REFERENCES service_categories(id);
 );
+
+CREATE TABLE service_categories (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  slug VARCHAR(50) UNIQUE,
+  description TEXT
+);
+
 
 CREATE TABLE regions (
   id INT AUTO_INCREMENT PRIMARY KEY,
