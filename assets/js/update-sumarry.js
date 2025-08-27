@@ -149,16 +149,31 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 
+  function updateRegionCounts() {
+  fetch('/controllers/get-region-counts.php')
+    .then(response => response.json())
+    .then(data => {
+      Object.entries(data).forEach(([slug, count]) => {
+        safeUpdate(slug, count); // assumes your HTML IDs match region slugs
+      });
+    })
+    .catch(error => {
+      console.error('Failed to load region counts:', error);
+    });
+}
+
 
   // Initial loads
   updateCounts();
   updateServiceCounts();
+  updateRegionCounts();
 
 
   // Periodic refresh
   setInterval(() => {
     updateCounts();
     updateServiceCounts();
+    updateRegionCounts();
   }, 10000);
 
 });

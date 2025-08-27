@@ -6,6 +6,7 @@ $stmt = $pdo->query("
     r.id, r.name, r.date, r.age, r.sex, r.customer_type,
     s.name AS service_availed,
     CONCAT(reg.code, ' - ', reg.name) AS region,
+    reg.slug AS region_slug,
     r.submitted_at,
     a.citizen_charter_awareness, a.cc1, a.cc2, a.cc3,
     a.sqd1, a.sqd2, a.sqd3, a.sqd4, a.sqd5, a.sqd6, a.sqd7, a.sqd8,
