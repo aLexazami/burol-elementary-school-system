@@ -148,6 +148,38 @@ function getCitizenCharterResponses($pdo, $service_id, $year) {
   return $responses;
 }
 
+function getSQDBreakdowns($pdo, $service_id, $year) {
+  $stmt = $pdo->prepare("
+    SELECT sqd1, sqd2, sqd3, sqd4, sqd5, sqd6, sqd7, sqd8
+    FROM feedback_answers
+    WHERE respondent_id IN (
+      SELECT id FROM feedback_respondents
+      WHERE service_availed_id = :service_id AND YEAR(date) = :year
+    )
+  ");
+  $stmt->execute(['service_id' => $service_id, 'year' => $year]);
+
+  $breakdowns = [];
+  for ($i = 1; $i <= 8; $i++) {
+    $breakdowns["sqd$i"] = [
+      1 => 0, 2 => 0, 3 => 0, 4 => 0, 5 => 0, 'na' => 0
+    ];
+  }
+
+  foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+    for ($i = 1; $i <= 8; $i++) {
+      $score = $row["sqd$i"];
+      if ($score === null || $score === 'na') {
+        $breakdowns["sqd$i"]['na']++;
+      } elseif (is_numeric($score) && isset($breakdowns["sqd$i"][(int)$score])) {
+        $breakdowns["sqd$i"][(int)$score]++;
+      }
+    }
+  }
+
+  return $breakdowns;
+}
+
 // 🔧 Execute and Respond
 $respondents = getRespondentCount($pdo, $service_id, $year);
 $demographics = getDemographics($pdo, $service_id, $year);
@@ -155,8 +187,7 @@ $sqd = getSQDAverages($pdo, $service_id, $year);
 $ageGroups = getAgeGroups($pdo, $service_id, $year);
 $customerTypes = getCustomerTypes($pdo, $service_id, $year);
 $charterResponses = getCitizenCharterResponses($pdo, $service_id, $year);
-
-
+$sqdBreakdowns = getSQDBreakdowns($pdo, $service_id, $year);
 
 echo json_encode([
   'respondents' => $respondents,
@@ -165,5 +196,6 @@ echo json_encode([
   'sqd' => $sqd,
   'age' => $ageGroups,
   'customer_types' => $customerTypes,
-  'charter' => $charterResponses
+  'charter' => $charterResponses,
+  'sqd_breakdowns' => $sqdBreakdowns
 ]);

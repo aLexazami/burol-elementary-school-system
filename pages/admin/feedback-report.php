@@ -224,184 +224,216 @@ require_once  __DIR__ . '/../../config/database.php';
                 <h1 class="font-medium">SQD1 (Responsiveness)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd1['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD2 (Reliability)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd2['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD3 (Access & Facility)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd3['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD4 (Communication)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd4['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD5 (Costs)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd5['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD6 (Integrity)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd6['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD7 (Assurance)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd7['na']}</span>
                   </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD8 (Outcome)</h1>
                   <div class="pl-2 pt-2">
                     <p>●  Strongly Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8[5]}</span>
                     <br>
                     <br>
                     <p>● Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8[4]}</span>
                     <br>
                     <br>
                     <p>● Neither Disagree nor Agree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8[3]}</span>
                     <br>
                     <br>
                     <p>● Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8[2]}</span>
                     <br>
                     <br>
                     <p>● Strongly Disagree</p>
-                    <span class="text-red-500 font-bold">0</span>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8[1]}</span>
+                    <br>
+                    <br>
+                    <p>● Not Applicable</p>
+                    <span class="text-red-500 font-bold">${data.sqd_breakdowns.sqd8['na']}</span>
                   </div>
               </div>
             </div>
