@@ -80,7 +80,7 @@ require_once  __DIR__ . '/../../config/database.php';
       const serviceId = this.value;
       const serviceName = this.options[this.selectedIndex].text;
 
-      fetch(`/controllers/service-report.php?service_id=${serviceId}&year=2025`)
+      fetch(`/controllers/get-feedback-data.php?service_id=${serviceId}&year=2025`)
         .then(res => res.json())
         .then(data => {
           const container = document.getElementById('service-report-container');
@@ -158,61 +158,61 @@ require_once  __DIR__ . '/../../config/database.php';
                   <h1 class="font-medium">A. Citizen's Charter Awareness (CC1)</h1>
                     <div class="pl-2 pt-2">
                       <p>● 1</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc1-1" class="text-red-500 font-bold">${data.charter.cc1[1]}</span>
                       <br>
                       <br>
                       <p>● 2</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc1-2" class="text-red-500 font-bold">${data.charter.cc1[2]}</span>
                       <br>
                       <br>
                       <p>● 3</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc1-3" class="text-red-500 font-bold">${data.charter.cc1[3]}</span>
                       <br>
                       <br>
                       <p>● 4</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc1-4" class="text-red-500 font-bold">${data.charter.cc1[4]}</span>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow ">
                   <h1 class="font-medium">B. Citizen’s Charter Visibility (CC2)</h1>
                     <div class="pl-2 pt-2">
                       <p>● 1</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc2-1" class="text-red-500 font-bold">${data.charter.cc2[1]}</span>
                       <br>
                       <br>
                       <p>● 2</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc2-2" class="text-red-500 font-bold">${data.charter.cc2[2]}</span>
                       <br>
                       <br>
                       <p>● 3</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc2-3" class="text-red-500 font-bold">${data.charter.cc2[3]}</span>
                       <br>
                       <br>
                       <p>● 4</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc2-4" class="text-red-500 font-bold">${data.charter.cc2[4]}</span>
                       <br>
                       <br>
                       <p>● 5</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc2-5" class="text-red-500 font-bold">${data.charter.cc2[5]}</span>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow ">
                   <h1 class="font-medium">C. Citizen’s Charter Helpfulness (CC3)</h1>
                     <div class="pl-2 pt-2">
                       <p>● 1</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc3-1" class="text-red-500 font-bold">${data.charter.cc3[1]}</span>
                       <br>
                       <br>
                       <p>● 2</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc3-2" class="text-red-500 font-bold">${data.charter.cc3[2]}</span>
                       <br>
                       <br>
                       <p>● 3</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc3-3" class="text-red-500 font-bold">${data.charter.cc3[3]}</span>
                       <br>
                       <br>
                       <p>● 4</p>
-                      <span class="text-red-500 font-bold">0</span>
+                      <span id="cc3-4" class="text-red-500 font-bold">${data.charter.cc3[4]}</span>
                     </div>
                 </div>
               </div>
