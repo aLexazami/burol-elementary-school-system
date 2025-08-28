@@ -1,7 +1,6 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-error_reporting(E_ALL);
 
 require_once  __DIR__ . '/../../auth/session.php';
 require_once  __DIR__ . '/../../config/database.php';
@@ -86,16 +85,11 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
     .then(data => {
       const container = document.getElementById('service-report-container');
       container.innerHTML = `
-        <h2 class="text-xl font-bold text-emerald-700">${serviceName}</h2>
+        <h2 class="text-xl font-bold text-emerald-700 pl-3">${serviceName}</h2>
         <div class="">
           <div class="bg-white p-3 rounded-lg shadow mb-3">
             <h1><strong>I. Total number of clients who completed the survey for FY 2024:</strong></h1>
             <span class="text-red-500 font-bold ">${data.respondents}</span>
-            <br>
-            <br>
-            <h1><strong>Brief Analysis</strong></h1>
-            <p>Offices shall briefly discuss their response rate results and provide reason/s why certain services were not offered or why certain services have no/low responses, as applicable.</p>
-            <span class="text-red-500 font-bold">Type here..</span>
           </div>
           <div class="bg-white p-3 rounded-lg shadow mb-3">
             <h1><strong>II. Total number of transactions for FY 2024:</strong></h1>
@@ -126,10 +120,6 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                   <br>
                   <p>● 65 or Higher</p>
                   <span class="text-red-500 font-bold">0</span>
-                  <br>
-                  <br>
-                  <p>● Did not specify</p>
-                  <span class="text-red-500 font-bold">Type here..</span>
                 </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
@@ -141,10 +131,6 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                   <br>
                   <p>● Male</p>
                   <span class="text-red-500 font-bold">${data.male}</span>
-                  <br>
-                  <br>
-                  <p>● Did not specify</p>
-                  <span class="text-red-500 font-bold">Type here..</span>
                 </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
@@ -160,16 +146,9 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                   <br>
                   <p>● Government</p>
                   <span class="text-red-500 font-bold">0</span>
-                  <br>
-                  <br>
-                  <p>● Did not specify</p>
-                  <span class="text-red-500 font-bold">Type here..</span>
                 </div>
               </div>
             </div>
-            <h1><strong>Brief Analysis</strong></h1>
-            <p>Offices shall briefly discuss the results of the client demographic profile.</p>
-            <span class="text-red-500 font-bold">Type here..</span>
           </div>
           <div class="bg-white p-3 rounded-lg shadow mb-3">
             <h1><strong>IV. Count of Citizen’s Charter Responses</strong></h1>
@@ -192,10 +171,6 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                       <br>
                       <p>● 4</p>
                       <span class="text-red-500 font-bold">0</span>
-                      <br>
-                      <br>
-                      <p>● Did not specify</p>
-                      <span class="text-red-500 font-bold">Type here..</span>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow ">
@@ -219,10 +194,6 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                       <br>
                       <p>● 5</p>
                       <span class="text-red-500 font-bold">0</span>
-                      <br>
-                      <br>
-                      <p>● Did not specify</p>
-                      <span class="text-red-500 font-bold">Type here..</span>
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow ">
@@ -242,39 +213,203 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                       <br>
                       <p>● 4</p>
                       <span class="text-red-500 font-bold">0</span>
-                      <br>
-                      <br>
-                      <p>● Did not specify</p>
-                      <span class="text-red-500 font-bold">Type here..</span>
                     </div>
                 </div>
               </div>
-            <br>
-            <br>
-            <h1><strong>Brief Analysis</strong></h1>
-            <p>Offices shall briefly discuss the results of the Citizen's Charter responses.</p>
-            <span class="text-red-500 font-bold">Type here..</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg shadow mb-3">
+            <h1><strong>V. Result count of SQD questions for FY 2024</strong></h1>
+            <div class="grid grid-cols-4 gap-4">
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD1 (Responsiveness)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD2 (Reliability)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD3 (Access & Facility)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD4 (Communication)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD5 (Costs)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD6 (Integrity)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD7 (Assurance)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+              <div class="bg-white p-4 rounded-lg shadow">
+                <h1 class="font-medium">SQD8 (Outcome)</h1>
+                  <div class="pl-2 pt-2">
+                    <p>●  Strongly Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Neither Disagree nor Agree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                    <br>
+                    <br>
+                    <p>● Strongly Disagree</p>
+                    <span class="text-red-500 font-bold">0</span>
+                  </div>
+              </div>
+            </div>
           </div>
         </div>
-        <canvas id="chart-sqd-${serviceId}" class="w-full h-64 mt-6"></canvas>
       `;
-      renderSQDChart(serviceId, data.sqd);
     });
 });
-
-function renderSQDChart(serviceId, sqdData) {
-  new Chart(document.getElementById(`chart-sqd-${serviceId}`), {
-    type: 'bar',
-    data: {
-      labels: ['SQD1','SQD2','SQD3','SQD4','SQD5','SQD6','SQD7','SQD8'],
-      datasets: [{
-        label: 'Satisfaction Scores',
-        data: sqdData,
-        backgroundColor: '#34D399'
-      }]
-    }
-  });
-}
 </script>
 
 </body>
