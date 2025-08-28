@@ -88,11 +88,11 @@ require_once  __DIR__ . '/../../config/database.php';
         <h2 class="text-xl font-bold text-emerald-700 pl-3">${serviceName}</h2>
         <div class="">
           <div class="bg-white p-3 rounded-lg shadow mb-3">
-            <h1><strong>I. Total number of clients who completed the survey for FY 2024:</strong></h1>
+            <h1><strong>I. Total number of clients who completed the survey for FY <?= date('Y') ?>:</strong></h1>
             <span class="text-red-500 font-bold ">${data.respondents}</span>
           </div>
           <div class="bg-white p-3 rounded-lg shadow mb-3">
-            <h1><strong>II. Total number of transactions for FY 2024:</strong></h1>
+            <h1><strong>II. Total number of transactions for FY <?= date('Y') ?>:</strong></h1>
             <span class="text-red-500 font-bold">0</span>
           </div>
           <div class="bg-white p-3 rounded-lg shadow mb-3">
@@ -218,7 +218,7 @@ require_once  __DIR__ . '/../../config/database.php';
               </div>
           </div>
           <div class="bg-white p-3 rounded-lg shadow mb-3">
-            <h1><strong>V. Result count of SQD questions for FY 2024</strong></h1>
+            <h1><strong>V. Result count of SQD questions for FY <?= date('Y') ?></strong></h1>
             <div class="grid grid-cols-4 gap-4">
               <div class="bg-white p-4 rounded-lg shadow">
                 <h1 class="font-medium">SQD1 (Responsiveness)</h1>
