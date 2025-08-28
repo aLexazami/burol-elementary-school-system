@@ -70,6 +70,24 @@ function getAgeGroups($pdo, $service_id, $year) {
   return $groups;
 }
 
+function getCustomerTypes($pdo, $service_id, $year) {
+  $stmt = $pdo->prepare("
+    SELECT customer_type, COUNT(*) AS count
+    FROM feedback_respondents
+    WHERE service_availed_id = :service_id AND YEAR(date) = :year
+    GROUP BY customer_type
+  ");
+  $stmt->execute(['service_id' => $service_id, 'year' => $year]);
+
+  $types = ['Citizen' => 0, 'Business' => 0, 'Government' => 0];
+  foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+    $key = ucfirst(strtolower($row['customer_type']));
+    if (isset($types[$key])) $types[$key] = (int)$row['count'];
+  }
+
+  return $types;
+}
+
 function getSQDAverages($pdo, $service_id, $year) {
   $stmt = $pdo->prepare("
     SELECT sqd1, sqd2, sqd3, sqd4, sqd5, sqd6, sqd7, sqd8
@@ -107,12 +125,14 @@ $respondents = getRespondentCount($pdo, $service_id, $year);
 $demographics = getDemographics($pdo, $service_id, $year);
 $sqd = getSQDAverages($pdo, $service_id, $year);
 $ageGroups = getAgeGroups($pdo, $service_id, $year);
+$customerTypes = getCustomerTypes($pdo, $service_id, $year);
+
 
 echo json_encode([
   'respondents' => $respondents,
-  'transactions' => $respondents, // or replace with actual transaction count
   'male' => $demographics['male'],
   'female' => $demographics['female'],
   'sqd' => $sqd,
-  'age' => $ageGroups
+  'age' => $ageGroups,
+  'customer_types' => $customerTypes
 ]);

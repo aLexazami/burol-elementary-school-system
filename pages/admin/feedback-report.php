@@ -137,15 +137,15 @@ require_once  __DIR__ . '/../../config/database.php';
                 <h1 class="font-medium">C. Customer Type</h1>
                 <div class="pl-2 pt-2">
                   <p>● Citizen</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="type-citizen" class="text-red-500 font-bold">${data.customer_types['Citizen']}</span>
                   <br>
                   <br>
                   <p>● Business</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="type-business" class="text-red-500 font-bold">${data.customer_types['Business']}</span>
                   <br>
                   <br>
                   <p>● Government</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="type-government" class="text-red-500 font-bold">${data.customer_types['Government']}</span>
                 </div>
               </div>
             </div>
