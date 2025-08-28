@@ -37,6 +37,39 @@ function getDemographics($pdo, $service_id, $year) {
   return $counts;
 }
 
+function getAgeGroups($pdo, $service_id, $year) {
+  $stmt = $pdo->prepare("
+    SELECT
+      CASE
+        WHEN age <= 19 THEN '19_or_lower'
+        WHEN age BETWEEN 20 AND 34 THEN '20_34'
+        WHEN age BETWEEN 35 AND 49 THEN '35_49'
+        WHEN age BETWEEN 50 AND 64 THEN '50_64'
+        ELSE '65_or_higher'
+      END AS age_group,
+      COUNT(*) AS count
+    FROM feedback_respondents
+    WHERE service_availed_id = :service_id AND YEAR(date) = :year
+    GROUP BY age_group
+  ");
+  $stmt->execute(['service_id' => $service_id, 'year' => $year]);
+
+  $groups = [
+    '19_or_lower' => 0,
+    '20_34' => 0,
+    '35_49' => 0,
+    '50_64' => 0,
+    '65_or_higher' => 0
+  ];
+
+  foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+    $key = $row['age_group'];
+    $groups[$key] = (int)$row['count'];
+  }
+
+  return $groups;
+}
+
 function getSQDAverages($pdo, $service_id, $year) {
   $stmt = $pdo->prepare("
     SELECT sqd1, sqd2, sqd3, sqd4, sqd5, sqd6, sqd7, sqd8
@@ -73,11 +106,13 @@ function getSQDAverages($pdo, $service_id, $year) {
 $respondents = getRespondentCount($pdo, $service_id, $year);
 $demographics = getDemographics($pdo, $service_id, $year);
 $sqd = getSQDAverages($pdo, $service_id, $year);
+$ageGroups = getAgeGroups($pdo, $service_id, $year);
 
 echo json_encode([
   'respondents' => $respondents,
   'transactions' => $respondents, // or replace with actual transaction count
   'male' => $demographics['male'],
   'female' => $demographics['female'],
-  'sqd' => $sqd
+  'sqd' => $sqd,
+  'age' => $ageGroups
 ]);

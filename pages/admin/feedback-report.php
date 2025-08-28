@@ -1,10 +1,10 @@
 <?php
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
 error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 require_once  __DIR__ . '/../../auth/session.php';
 require_once  __DIR__ . '/../../config/database.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -76,15 +76,15 @@ require_once  __DIR__ . '/../../config/database.php';
   <script src="/assets/js/date-time.js"></script>
 
   <script>
-document.getElementById('serviceSelect').addEventListener('change', function () {
-  const serviceId = this.value;
-  const serviceName = this.options[this.selectedIndex].text;
+    document.getElementById('serviceSelect').addEventListener('change', function() {
+      const serviceId = this.value;
+      const serviceName = this.options[this.selectedIndex].text;
 
-  fetch(`/controllers/service-report.php?service_id=${serviceId}&year=2025`)
-    .then(res => res.json())
-    .then(data => {
-      const container = document.getElementById('service-report-container');
-      container.innerHTML = `
+      fetch(`/controllers/service-report.php?service_id=${serviceId}&year=2025`)
+        .then(res => res.json())
+        .then(data => {
+          const container = document.getElementById('service-report-container');
+          container.innerHTML = `
         <h2 class="text-xl font-bold text-emerald-700 pl-3">${serviceName}</h2>
         <div class="">
           <div class="bg-white p-3 rounded-lg shadow mb-3">
@@ -103,23 +103,23 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
                 <h1 class="font-medium">A. Age</h1>
                 <div class="pl-2 pt-2">
                   <p>● 19 or Lower</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="age-19" class="text-red-500 font-bold">${data.age['19_or_lower']}</span>
                   <br>
                   <br>
                   <p>● 20 - 34</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="age-20-34" class="text-red-500 font-bold">${data.age['20_34']}</span>
                   <br>
                   <br>
                   <p>● 35 - 49</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="age-35-49" class="text-red-500 font-bold">${data.age['35_49']}</span>
                   <br>
                   <br>
                   <p>● 50 - 64</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="age-50-64" class="text-red-500 font-bold">${data.age['50_64']}</span>
                   <br>
                   <br>
                   <p>● 65 or Higher</p>
-                  <span class="text-red-500 font-bold">0</span>
+                  <span id="age-65" class="text-red-500 font-bold">${data.age['65_or_higher']}</span>
                 </div>
               </div>
               <div class="bg-white p-4 rounded-lg shadow">
@@ -408,9 +408,10 @@ document.getElementById('serviceSelect').addEventListener('change', function () 
           </div>
         </div>
       `;
+        });
     });
-});
-</script>
+    
+  </script>
 
 </body>
 
