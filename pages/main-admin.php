@@ -31,8 +31,9 @@ require_once __DIR__ . '/../auth/session.php';
     <!-- Right Side Content -->
     <section class="m-4">
       <div class=" grid grid-cols-3 gap-4">
-        <div class="bg-emerald-300 col-span-3  p-2">
-          <h1 class="font-bold text-center text-lg">Respondents</h1>
+        <div class="bg-emerald-300 col-span-3  flex justify-center items-center gap-2 p-2">
+          <img src="/assets/img/home.png " class="w-5 h-5">
+          <h1 class="font-bold text-lg ">Dashboard</h1>
         </div>
 
         <!-- New -->

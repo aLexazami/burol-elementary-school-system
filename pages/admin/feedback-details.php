@@ -47,53 +47,53 @@ require_once  __DIR__ .'/../../includes/fetch-feedback-data.php';
         <table id="feedbackTable" class="bg-white w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2">
           <thead class=" bg-gray-300 text-left  text-black">
             <tr class=" shadow-lg sticky top-0 z-10">
-              <th class="px-5 py-5 ">No.</th>
-              <th class="px-5 ">Name</th>
-              <th class="px-5">Date</th>
-              <th class="px-5">Age</th>
-              <th class="px-5">Sex</th>
-              <th class="px-5">Customer Type</th>
-              <th class="px-5">Service Availed</th>
-              <th class="px-5">Region</th>
-              <th class="px-5">Citizen Charter Awareness</th>
-              <th class="px-5">CC1</th>
-              <th class="px-5">CC2</th>
-              <th class="px-5">CC3</th>
-              <th class="px-5">SQD1</th>
-              <th class="px-5">SQD2</th>
-              <th class="px-5">SQD3</th>
-              <th class="px-5">SQD4</th>
-              <th class="px-5">SQD5</th>
-              <th class="px-5">SQD6</th>
-              <th class="px-5">SQD7</th>
-              <th class="px-5">SQD8</th>
-              <th class="px-5">Remarks</th>
+              <th>No.</th>
+              <th class=" ">Name</th>
+              <th>Date</th>
+              <th>Age</th>
+              <th>Sex</th>
+              <th>Customer Type</th>
+              <th>Service Availed</th>
+              <th>Region</th>
+              <th>Citizen Charter Awareness</th>
+              <th>CC1</th>
+              <th>CC2</th>
+              <th>CC3</th>
+              <th>SQD1</th>
+              <th>SQD2</th>
+              <th>SQD3</th>
+              <th>SQD4</th>
+              <th>SQD5</th>
+              <th>SQD6</th>
+              <th>SQD7</th>
+              <th>SQD8</th>
+              <th>Remarks</th>
             </tr>
           </thead>
           <tbody>
             <?php foreach ($results as $row): ?>
               <tr class="shadow-lg border-t ">
-                <td class="px-5 py-5 font-medium  "><?= $row['id'] ?></td>
-                <td class="px-5 py-5"><?= htmlspecialchars($row['name']) ?></td>
-                <td class="px-5 py-5"><?= $row['date'] ?></td>
-                <td class="px-5 py-5"><?= $row['age'] ?></td>
-                <td class="px-5 py-5"><?= $row['sex'] ?></td>
-                <td class="pl-5 pr-11 py-5"><?= $row['customer_type'] ?></td>
-                <td class="px-5 py-5"><?= $row['service_availed'] ?></td>
-                <td class="px-5 py-5"><?= $row['region'] ?></td>
-                <td class="px-5 py-5"><?= $row['citizen_charter_awareness'] ?></td>
-                <td class="px-5 py-5"><?= $row['cc1'] ?></td>
-                <td class="px-5 py-5"><?= $row['cc2'] ?></td>
-                <td class="px-5 py-5"><?= $row['cc3'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd1'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd2'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd3'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd4'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd5'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd6'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd7'] ?></td>
-                <td class="px-5 py-5"><?= $row['sqd8'] ?></td>
-                <td class="px-5 py-5"><?= $row['remarks'] ?></td>
+                <td><?= $row['id'] ?></td>
+                <td><?= htmlspecialchars($row['name']) ?></td>
+                <td><?= $row['date'] ?></td>
+                <td><?= $row['age'] ?></td>
+                <td><?= $row['sex'] ?></td>
+                <td><?= $row['customer_type'] ?></td>
+                <td><?= $row['service_availed'] ?></td>
+                <td><?= $row['region'] ?></td>
+                <td><?= $row['citizen_charter_awareness'] ?></td>
+                <td><?= $row['cc1'] ?></td>
+                <td><?= $row['cc2'] ?></td>
+                <td><?= $row['cc3'] ?></td>
+                <td><?= $row['sqd1'] ?></td>
+                <td><?= $row['sqd2'] ?></td>
+                <td><?= $row['sqd3'] ?></td>
+                <td><?= $row['sqd4'] ?></td>
+                <td><?= $row['sqd5'] ?></td>
+                <td><?= $row['sqd6'] ?></td>
+                <td><?= $row['sqd7'] ?></td>
+                <td><?= $row['sqd8'] ?></td>
+                <td><?= $row['remarks'] ?></td>
               </tr>
             <?php endforeach; ?>
           </tbody>

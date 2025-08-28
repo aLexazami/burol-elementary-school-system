@@ -31,6 +31,10 @@ require_once  __DIR__ . '/../../config/database.php';
 
     <!-- Right Side Context Section -->
     <section class="m-4">
+      <div class="bg-emerald-300 p-2 flex justify-center items-center gap-2 mb-5">
+        <img src="/assets/img/feedback-report.png " class="w-5 h-5">
+        <h1 class="font-bold text-lg ">Feedback Report</h1>
+      </div>
       <div class="space-y-4">
         <div class="mb-6">
           <select id="serviceSelect" class="mt-1 block w-full p-2 border rounded-lg bg-white shadow-sm">

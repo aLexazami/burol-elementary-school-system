@@ -38,8 +38,9 @@ require_once  __DIR__ .'/../../includes/fetch-feedback-data.php';
 
     <!-- Right Side Context Section -->
     <section class="m-4">
-      <div class="bg-emerald-300 p-2">
-        <h1 class="font-bold text-center text-lg">Submitted Feedback</h1>
+      <div class="bg-emerald-300 p-2 flex justify-center items-center gap-2">
+        <img src="/assets/img/feedback-respondent.png " class="w-5 h-5">
+        <h1 class="font-bold text-lg ">Feedback Respondets</h1>
       </div>
       <a href="/pages/admin/feedback-details.php">
         <button class="cursor-pointer  w-fit m-1 hover:bg-emerald-600 rounded-md p-1 absolute">
@@ -50,27 +51,27 @@ require_once  __DIR__ .'/../../includes/fetch-feedback-data.php';
       <table id="feedbackTable" class=" w-full table-auto text-sm mt-10 mb-20 border-separate border-spacing-y-2 bg-white">
         <thead class=" bg-gray-300 text-left  text-black">
           <tr class=" shadow-lg ">
-            <th class="px-5 py-5 ">No.</th>
-            <th class="px-5 ">Name</th>
-            <th class="px-5">Date</th>
-            <th class="px-5">Age</th>
-            <th class="px-5">Sex</th>
-            <th class="px-5">Customer Type</th>
-            <th class="px-5">Service Availed</th>
-            <th class="px-5">Region</th>
+            <th>No.</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>Customer Type</th>
+            <th>Service Availed</th>
+            <th>Region</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($results as $row): ?>
             <tr class="shadow-lg border-t ">
-              <td class="px-5 py-5 font-medium  "><?= $row['id'] ?></td>
-              <td class="px-5 py-5"><?= htmlspecialchars($row['name']) ?></td>
-              <td class="px-5 py-5"><?= $row['date'] ?></td>
-              <td class="px-5 py-5"><?= $row['age'] ?></td>
-              <td class="px-5 py-5"><?= $row['sex'] ?></td>
-              <td class="pl-5 pr-11 py-5"><?= $row['customer_type'] ?></td>
-              <td class="px-5 py-5"><?= $row['service_availed'] ?></td>
-              <td class="px-5 py-5"><?= $row['region'] ?></td>
+              <td><?= $row['id'] ?></td>
+              <td><?= htmlspecialchars($row['name']) ?></td>
+              <td><?= $row['date'] ?></td>
+              <td><?= $row['age'] ?></td>
+              <td><?= $row['sex'] ?></td>
+              <td><?= $row['customer_type'] ?></td>
+              <td><?= $row['service_availed'] ?></td>
+              <td><?= $row['region'] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
