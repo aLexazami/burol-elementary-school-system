@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-require_once __DIR__ . '/../auth/session.php';
+require_once __DIR__.'/../auth/session.php';
 require_once __DIR__ . '/../config/database.php';
 ?>
 
@@ -14,7 +14,7 @@ require_once __DIR__ . '/../config/database.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../src/styles.css" rel="stylesheet">
-  <title>Staff Dashboard</title>
+  <title>Super Admin Dashboard</title>
 </head>
 
 <body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
@@ -28,15 +28,12 @@ require_once __DIR__ . '/../config/database.php';
   <!-- Main Content Section -->
   <!-- Main Staff Section-->
   <main class="max-w-4xl mx-auto px-4 pt-10 ">
-    <h1 class="text-xl font-bold">Welcome, <?= htmlspecialchars($_SESSION['firstName']) ?>!</h1>
-    <p class="text-sm text-gray-600">You are viewing the Staff Dashboard.</p>
-    <!-- Staff-specific modules go here -->
 
 
   </main>
 
   <!--Footer Section-->
-  <?php include '../includes/footer.php' ?>
+ <?php include '../includes/footer.php'?>
 
 
   <script src="../assets/js/button.js"></script>
