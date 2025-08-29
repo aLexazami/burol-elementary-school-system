@@ -17,7 +17,7 @@ require_once __DIR__ . '/../config/database.php';
   <title>Staff Dashboard</title>
 </head>
 
-<body class="bg-gradient-to-b from-white to-emerald-800 h-screen">
+<body class="bg-gray-200 min-h-screen">
 
 
   <!-- Header Section -->
@@ -25,13 +25,12 @@ require_once __DIR__ . '/../config/database.php';
     <?php include '../includes/header.php' ?>
   </header>
 
+
   <!-- Main Content Section -->
   <!-- Main Staff Section-->
-  <main class="max-w-4xl mx-auto px-4 pt-10 ">
-    <h1 class="text-xl font-bold">Welcome, <?= htmlspecialchars($_SESSION['firstName']) ?>!</h1>
-    <p class="text-sm text-gray-600">You are viewing the Staff Dashboard.</p>
-    <!-- Staff-specific modules go here -->
-
+  <main class=" grid grid-cols-[248px_1fr]  min-h-screen">
+    <!-- Left Side Navigation -->
+    <?php include '../includes/side-nav-admin.php' ?>
 
   </main>
 

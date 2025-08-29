@@ -10,10 +10,8 @@
   </div>
   <?php
   $navItems = [
-    ['label' => 'Dashboard', 'href' => '/pages/main-admin.php', 'icon' => 'home.png'],
-    ['label' => 'Feedback Respondents', 'href' => '/pages/admin/feedback-respondents.php', 'icon' => 'feedback-respondent.png'],
-    ['label' => 'Feedback Summary', 'href' => '/pages/admin/feedback-summary.php', 'icon' => 'feedback-summary.png'],
-    ['label' => 'Feedback Report', 'href' => '/pages/admin/feedback-report.php', 'icon' => 'feedback-report.png'],
+    ['label' => 'Dashboard', 'href' => '/pages/main-super-admin.php', 'icon' => 'home.png'],
+    ['label' => 'Create Account', 'href' => '/pages/super-admin/create-account.php', 'icon' => 'create-account.png'],
   ];
   ?>
   <?php foreach ($navItems as $item): ?>
@@ -25,5 +23,4 @@
 </span>
     </a>
   <?php endforeach; ?>
-  
 </aside>

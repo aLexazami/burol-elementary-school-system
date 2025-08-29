@@ -16,12 +16,6 @@ require_once  __DIR__ . '/../../includes/fetch-feedback-data.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/src/styles.css" rel="stylesheet">
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-  <!-- jQuery (required by DataTables) -->
-  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-  <!-- DataTables JS -->
-  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
   <title>Create Account</title>
 </head>
 
@@ -34,7 +28,7 @@ require_once  __DIR__ . '/../../includes/fetch-feedback-data.php';
   <!-- Feedback Respondents Main Content Section -->
   <main class=" grid grid-cols-[248px_1fr] min-h-screen">
     <!-- Left Side Navigation Section -->
-    <?php include '../../includes/side-nav-admin.php' ?>
+    <?php include '../../includes/side-nav-super-admin.php' ?>
 
     <!-- Right Side Context Section -->
     <section class="m-4">

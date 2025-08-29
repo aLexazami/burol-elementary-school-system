@@ -19,7 +19,6 @@ require_once __DIR__ . '/../auth/session.php';
 </head>
 
 <body class="bg-gray-200 min-h-screen">
-
   <!-- Header Section -->
   <?php include '../includes/header.php' ?>
 

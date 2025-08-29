@@ -32,7 +32,7 @@
           </button>
 
           <!-- Role Switcher Dropdown -->
-          <?php if (count($_SESSION['available_roles']) > 0): ?>
+          <?php if (count($_SESSION['available_roles']) >= 1): ?>
             <div id="role-switcher-desktop" class="absolute top-full right-0 mt-2 w-48 bg-white border rounded shadow-lg z-50 hidden px-4 py-2 space-y-1">
               <?php foreach ($_SESSION['available_roles'] as $role): ?>
                 <a href="#"
@@ -102,8 +102,10 @@
           </a>
         </div>
       </div>
-
-
     </div>
   </section>
 </header>
+<div>
+  <!-- Role Welcome-->
+  <?php include __DIR__ .'/../includes/role-welcome.php'?>
+</div>
