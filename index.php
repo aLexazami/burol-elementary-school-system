@@ -47,13 +47,12 @@ require_once __DIR__ . '/auth/session.php';
         <p class="text-emerald-800 text-2xl text-center font-bold">
           SIGN IN
         </p>
-
         <div class="flex justify-center items-center my-5  w-90 m-auto  rounded-lg border-2">
-          <img src="./assets/img/username.png" class="h-5 mr-1">
+          <img src="./assets/img/username.png" class="h-5 m-2">
           <input type="text" id="username" name="username" class="h-12 w-80 p-2 border-l-2  focus:outline-none" placeholder="Username" required>
         </div>
         <div class="flex justify-center items-center my-5  w-90 m-auto border-2 rounded-lg">
-          <img src="./assets/img/password.png" class="h-5 mr-1">
+          <img src="./assets/img/password.png" class="h-5 m-2">
           <input type="password" id="password" name="password" class="h-12 w-80 p-2  border-l-2 focus:outline-none" placeholder="Password" required>
         </div>
         <?php if (isset($_SESSION['error_message'])): ?>

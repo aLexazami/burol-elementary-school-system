@@ -14,6 +14,7 @@
     ['label' => 'Feedback Respondents', 'href' => '/pages/admin/feedback-respondents.php', 'icon' => 'feedback-respondent.png'],
     ['label' => 'Feedback Summary', 'href' => '/pages/admin/feedback-summary.php', 'icon' => 'feedback-summary.png'],
     ['label' => 'Feedback Report', 'href' => '/pages/admin/feedback-report.php', 'icon' => 'feedback-report.png'],
+    ['label' => 'Create Account', 'href' => '/pages/admin/create-account.php', 'icon' => 'create-account.png'],
   ];
   ?>
   <?php foreach ($navItems as $item): ?>

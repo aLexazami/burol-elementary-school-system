@@ -4,7 +4,7 @@ require_once __DIR__ . '/../includes/bootstrap.php'; // Loads Dotenv and autoloa
 session_start();
 
 // 🔧 Define public pages as a constant
-define('PUBLIC_PAGES', ['index.php', 'login.php', 'forgot-password.php']);
+define('PUBLIC_PAGES', ['index.php', 'login.php', 'forgot-password.php', 'feedback-form.php', 'faqs.php']);
 
 // 🔧 Define role-based access map
 define('ROLE_ACCESS', [
