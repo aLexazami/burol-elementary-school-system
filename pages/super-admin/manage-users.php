@@ -1,0 +1,56 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once __DIR__ . '/../../auth/session.php';
+
+if (!isset($_SESSION['user_id']) || $_SESSION['active_role_id'] !== 99) {
+  header("Location: ../index.php");
+  exit();
+}
+
+require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../controllers/get-users.php';
+
+// Context for the table
+$title = "User Management";
+$showActions = true;
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/src/styles.css" rel="stylesheet" />
+  <title><?= $title ?></title>
+</head>
+
+<body class="bg-gray-200 min-h-screen flex flex-col">
+  <?php include('../../includes/header.php'); ?>
+
+  <main class="grid grid-cols-[248px_1fr] min-h-screen">
+    <?php include('../../includes/side-nav-super-admin.php'); ?>
+
+    <section class="m-4">
+      <?php if (isset($_GET['archived']) && $_GET['archived'] === 'success'): ?>
+        <div data-alert="archived" class="mb-4 px-4 py-3 bg-emerald-100 border border-emerald-300 text-emerald-800 rounded shadow-sm">
+          ✅ User archived successfully.
+        </div>
+      <?php endif; ?>
+      <div class="p-6 bg-white rounded-lg shadow-md">
+        <h2 class="text-xl font-bold mb-4 text-emerald-700"><?= htmlspecialchars($title) ?></h2>
+        <?php include(__DIR__ . '/../../components/user-table.php'); ?>
+      </div>
+    </section>
+  </main>
+
+  <?php include('../../includes/footer.php'); ?>
+
+  <script src="/assets/js/auto-dismiss-alert.js"></script>
+  <script src="/assets/js/button.js"></script>
+  <script src="/assets/js/date-time.js"></script>
+</body>
+
+</html>

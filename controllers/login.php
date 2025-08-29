@@ -33,6 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Set session variables
         if ($user && password_verify($password, $user['password'])) {
+            if ($user['is_archived']) {
+                $_SESSION['error_message'] = 'Your account has been locked. Please contact the administrator.';
+                $_SESSION['login_attempts']++;
+                header("Location: ../index.php");
+                exit();
+            }
             $_SESSION['login_attempts'] = 0;
             $_SESSION['user_token'] = hash('sha256', $_ENV['SESSION_SECRET']);
             $_SESSION['user_id']    = $user['id'];
@@ -58,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['available_roles'] = $roles;
             $_SESSION['active_role_id'] = $defaultRole;
             $_SESSION['default_role_id'] = $defaultRole;
-  
+
 
 
             // 🔐 Redirect to password change if required

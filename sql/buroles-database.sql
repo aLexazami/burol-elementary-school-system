@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 28, 2025 at 12:45 PM
+-- Generation Time: Aug 29, 2025 at 01:41 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -84,18 +84,6 @@ INSERT INTO `feedback_respondents` (`id`, `name`, `date`, `age`, `sex`, `custome
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permissions`
---
-
-CREATE TABLE `permissions` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `regions`
 --
 
@@ -147,18 +135,8 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `description`) VALUES
 (1, 'Staff', 'Can view staff dashboard'),
-(2, 'Admin', 'Can view Admin Dashboard');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `role_permissions`
---
-
-CREATE TABLE `role_permissions` (
-  `role_id` int(11) NOT NULL,
-  `permission_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(2, 'Admin', 'Can view Admin Dashboard'),
+(99, 'Super Admin', 'Full system access including user management, settings, and audit controls');
 
 -- --------------------------------------------------------
 
@@ -232,18 +210,41 @@ CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `role_id` int(11) NOT NULL
+  `role_id` int(11) NOT NULL,
+  `must_change_password` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `email`, `role_id`) VALUES
-(1, 'Alex', 'Carbellido', 'Flores', 'flores123', '$2y$10$nUYddWgnw5jl7Fv6K/nJguvqmwQIJPVCJIHkEgwwz/PW9RT678qbq', 'alexazami08@gmail.com', 2),
-(2, 'Loren', 'Strawberry', 'Delejero', 'delejero123', '$2y$10$WHdiGHz3EY1fqQ9nuu8B5.xB3Pn4Cr6UyiMsUEpJn8jVD.1YxrYz6', 'adasda@gmail.com', 1),
-(3, 'David', 'Banana', 'Garcia', 'garcia123', '$2y$10$yMDnqNmXghyu0erg/Rsn8.foyXFStgLAThafBFrpVrBBNEmxvDlPG', 'garcia@gmail.com', 2),
-(4, 'Abigail', 'Blueberry', 'Dimapilis', 'dimapilis123', '$2y$10$a05pZlN7mJ48eMzxTS9rseMA/aJEEfOwxwqVzwGKR3L1ONuTFgegS', 'dimapilis@gmail.com', 1);
+INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `username`, `password`, `email`, `role_id`, `must_change_password`) VALUES
+(1, 'Alex', 'Carbellido', 'Flores', 'flores123', '$2y$10$nUYddWgnw5jl7Fv6K/nJguvqmwQIJPVCJIHkEgwwz/PW9RT678qbq', 'alexazami08@gmail.com', 2, 0),
+(2, 'Loren', 'Strawberry', 'Delejero', 'delejero123', '$2y$10$WHdiGHz3EY1fqQ9nuu8B5.xB3Pn4Cr6UyiMsUEpJn8jVD.1YxrYz6', 'adasda@gmail.com', 1, 0),
+(3, 'David', 'Banana', 'Garcia', 'garcia123', '$2y$10$yMDnqNmXghyu0erg/Rsn8.foyXFStgLAThafBFrpVrBBNEmxvDlPG', 'garcia@gmail.com', 2, 1),
+(4, 'Abigail', 'Blueberry', 'Dimapilis', 'dimapilis123', '$2y$10$saDzKGX6KLbLxifgNUFL4ewRCiWC5YAICzylAMBG0H0tX5SaKg.ai', 'dimapilis@gmail.com', 1, 0),
+(5, 'Admin', '', 'Bot', 'admin123', '$2y$10$1vMrrwYEWCU5upAXCtl.ROUPvPwRhxQSTBw9T1It/P4YzRP/E9uaa', 'admin123@gmail.com', 2, 0),
+(6, 'Nana', '', 'Batumbakal', 'nana123', '$2y$10$iX8.LpjNTfNLrdSB53f/FetWqPOlkECmUWy5N34ylYXg5/aSApjg.', 'nana123@gmail.com', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_roles`
+--
+
+CREATE TABLE `user_roles` (
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_roles`
+--
+
+INSERT INTO `user_roles` (`user_id`, `role_id`) VALUES
+(1, 1),
+(1, 2),
+(1, 99);
 
 --
 -- Indexes for dumped tables
@@ -265,13 +266,6 @@ ALTER TABLE `feedback_respondents`
   ADD KEY `feedback_respondents_ibfk_2` (`region_id`);
 
 --
--- Indexes for table `permissions`
---
-ALTER TABLE `permissions`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
 -- Indexes for table `regions`
 --
 ALTER TABLE `regions`
@@ -285,13 +279,6 @@ ALTER TABLE `regions`
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `role_permissions`
---
-ALTER TABLE `role_permissions`
-  ADD PRIMARY KEY (`role_id`,`permission_id`),
-  ADD KEY `permission_id` (`permission_id`);
 
 --
 -- Indexes for table `services`
@@ -316,6 +303,13 @@ ALTER TABLE `users`
   ADD KEY `role_id` (`role_id`);
 
 --
+-- Indexes for table `user_roles`
+--
+ALTER TABLE `user_roles`
+  ADD PRIMARY KEY (`user_id`,`role_id`),
+  ADD KEY `role_id` (`role_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -332,12 +326,6 @@ ALTER TABLE `feedback_respondents`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `permissions`
---
-ALTER TABLE `permissions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `regions`
 --
 ALTER TABLE `regions`
@@ -347,7 +335,7 @@ ALTER TABLE `regions`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT for table `services`
@@ -365,7 +353,7 @@ ALTER TABLE `service_categories`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -385,13 +373,6 @@ ALTER TABLE `feedback_respondents`
   ADD CONSTRAINT `feedback_respondents_ibfk_2` FOREIGN KEY (`region_id`) REFERENCES `regions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `role_permissions`
---
-ALTER TABLE `role_permissions`
-  ADD CONSTRAINT `role_permissions_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `role_permissions_ibfk_2` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `services`
 --
 ALTER TABLE `services`
@@ -402,6 +383,13 @@ ALTER TABLE `services`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_roles`
+--
+ALTER TABLE `user_roles`
+  ADD CONSTRAINT `user_roles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `user_roles_ibfk_2` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

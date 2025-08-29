@@ -12,6 +12,8 @@
   $navItems = [
     ['label' => 'Dashboard', 'href' => '/pages/main-super-admin.php', 'icon' => 'home.png'],
     ['label' => 'Create Account', 'href' => '/pages/super-admin/create-account.php', 'icon' => 'create-account.png'],
+    ['label' => 'Manage Users', 'href' => '/pages/super-admin/manage-users.php', 'icon' => 'create-account.png'],
+    ['label' => 'Archived Users', 'href' => '/pages/super-admin/archived-users.php', 'icon' => 'create-account.png'],
   ];
   ?>
   <?php foreach ($navItems as $item): ?>
