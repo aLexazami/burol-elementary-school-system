@@ -54,6 +54,33 @@ $showActions = true;
   <script src="/assets/js/auto-dismiss-alert.js"></script>
   <script src="/assets/js/button.js"></script>
   <script src="/assets/js/date-time.js"></script>
+  <script>
+  const searchInput = document.getElementById('userSearch');
+  const clearButton = document.getElementById('clearSearch');
+  const rows = document.querySelectorAll('table tbody tr');
+
+  let debounceTimer;
+
+  function filterRows(query) {
+    rows.forEach(row => {
+      const text = row.textContent.toLowerCase();
+      row.style.display = text.includes(query) ? '' : 'none';
+    });
+  }
+
+  searchInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      const query = searchInput.value.toLowerCase();
+      filterRows(query);
+    }, 300); // 300ms debounce delay
+  });
+
+  clearButton.addEventListener('click', () => {
+    searchInput.value = '';
+    filterRows('');
+  });
+</script>
 </body>
 
 </html>

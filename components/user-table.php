@@ -1,6 +1,20 @@
 <?php if (!isset($users) || !is_array($users)): ?>
   <p class="text-red-600">⚠️ No user data available.</p>
 <?php else: ?>
+  <div class="flex items-center gap-2 mb-4">
+  <input
+    type="text"
+    id="userSearch"
+    placeholder=" Search"
+    class="px-4 py-2 border rounded w-full max-w-md"
+  />
+  <button
+    id="clearSearch"
+    class="px-3 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm"
+  >
+    Clear
+  </button>
+</div>
   <table class="min-w-full table-auto border border-gray-200">
     <thead class="bg-emerald-600 text-white">
       <tr>
