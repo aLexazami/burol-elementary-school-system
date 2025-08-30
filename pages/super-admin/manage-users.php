@@ -34,13 +34,16 @@ $showActions = true;
     <?php include('../../includes/side-nav-super-admin.php'); ?>
 
     <section class="m-4">
+      <div class="bg-emerald-300 flex justify-center items-center gap-2 p-2 mb-5">
+        <img src="/assets/img/manage-user.png " class="w-5 h-5">
+        <h1 class="font-bold text-lg ">User Management</h1>
+      </div>
       <?php if (isset($_GET['archived']) && $_GET['archived'] === 'success'): ?>
         <div data-alert="archived" class="mb-4 px-4 py-3 bg-emerald-100 border border-emerald-300 text-emerald-800 rounded shadow-sm">
           ✅ User archived successfully.
         </div>
       <?php endif; ?>
       <div class="p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-xl font-bold mb-4 text-emerald-700"><?= htmlspecialchars($title) ?></h2>
         <?php include(__DIR__ . '/../../components/user-table.php'); ?>
       </div>
     </section>
